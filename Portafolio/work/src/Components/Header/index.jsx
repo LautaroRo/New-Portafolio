@@ -1,44 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./estilos.css"
+import "./estilos2.css"
+import "./Responsive.css"
 import foto from "./../../Assets/Foto2.jpeg"
 import img1 from "./../../Assets/img1.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap,faGithub, faGit, faLinkedin}from'@fortawesome/free-brands-svg-icons'
-import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun} from '@fortawesome/free-solid-svg-icons'
-const Header = () => {
-    const cambiar  = (e) =>{
-        const slider = document.querySelector(".container-all")
+import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight,faLocationDot, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 
-        if(slider){
-            slider.classList?.remove("container-all")
-            slider.classList?.add("container-all2")
-        }
+
+const Header = () => {
+    const [selectedOption, setSelectedOption] = useState('sobre');
+    const [estado, setEstado] = useState(false)
+
+    const [isChecked, setIsChecked] = useState(false);
+
+
+    const cambiar  = (e) =>{
 
         const query = document.querySelector(".activo")
+        const queryDark = document.querySelector(".activo-dark")
 
         if(query){
             query.classList?.remove("activo")
             e.target.classList?.add("activo")
+        }
+
+        if(queryDark){
+            queryDark.classList?.remove("activo-dark")
+            e.target.classList?.add("activo-dark")
         }
     }
 
-    const volverAcambiar = (e) =>{
-        const slider = document.querySelector(".container-all2")
 
-        if(slider){
-            slider.classList?.remove("container-all2")
-            slider.classList?.add("container-all")
+
+    const handleCheckboxClick = (e) =>{
+
+        const activos = document.querySelector(".activo-ul");
+
+        const input = e.target
+        
+        const inputCheck = document.getElementById("check")
+        if(activos && input !== inputCheck){
+            activos.classList?.remove("activo-ul");
+            e.target.classList?.add("activo-ul");
+            const a = e.target.getAttribute('value')
+            setSelectedOption(a)
         }
-
-        const query = document.querySelector(".activo")
-
-        if(query){
-            query.classList?.remove("activo")
-            e.target.classList?.add("activo")
-        }
+        setIsChecked(!isChecked);
     }
     return (
-        <>
+        <body>
                 {/*--Nombre Animacion-*/}
         <div className='descr'>
             <div className='Mi'>
@@ -47,9 +59,16 @@ const Header = () => {
 
             </div>
         </div>
+
+
+        {
+            estado === false
+
+            ?
+        <>
         <div className='container-buttons'>
             <button><FontAwesomeIcon className='iconoHeader' icon={faLinkedin}/></button>
-            <button><FontAwesomeIcon className='iconoHeader' icon={faSun}/></button>
+            <button onClick={() => setEstado(!estado)}><FontAwesomeIcon className='iconoHeader' icon={faSun}/></button>
         </div>
 
         <div className='Container-header'>
@@ -57,15 +76,42 @@ const Header = () => {
         {/*--Header-*/}
     
 
-        <header>
-            <nav>
-                <ul>
-                    <a onClick={volverAcambiar} className='activo' href='#sobre'>Sobre Mi</a>
-                    <a href='#habilidades' onClick={volverAcambiar}>Habilidades</a>
-                    <a onClick={volverAcambiar} href='#tecnologias'>Tecnologias</a>
+        <header className='header-light'>
+            <nav className='nav-light'>
+                <ul className='ul-light'>
+                    <a onClick={cambiar} className='activo' href='#sobre'>Sobre Mi</a>
+                    <a href='#habilidades' onClick={cambiar}>Habilidades</a>
+                    <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
                     <a onClick={cambiar} href='#proyectos'>Proyectos</a>
-                    <a onClick={volverAcambiar}>Contacto</a>
+                    <a onClick={cambiar} href='#contacto'>Contacto</a>
                 </ul>
+            </nav>
+
+            <nav className='nav-light-selec'>
+                <input type="checkbox" id='check' checked={isChecked} onChange={handleCheckboxClick}></input>
+                <label htmlFor="check">{selectedOption}</label>
+
+                    <ul className='ulSelect'>
+                        <li>
+                            <a value="sobre" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>Sobre Mi</a>
+                        </li>
+
+                        <li>
+                            <a value="habilidades" href="#habilidades" onClick={handleCheckboxClick} className=''>Habilidades</a>
+                        </li>
+
+                        <li>
+                            <a value="tecnologias" href="#tecnologias"  onClick={handleCheckboxClick} className=''>Tecnologias</a>
+                        </li>
+
+                        <li>
+                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                        </li>
+
+                        <li>
+                            <a  onClick={handleCheckboxClick}>Contacto</a>
+                        </li>
+                    </ul>
             </nav>
         </header>
 
@@ -77,7 +123,7 @@ const Header = () => {
         <main className="container-all">
                 <div id='sobre' className="slider-view">
                     <section className='contianer-info'>
-                        <article className='article-p'>
+                        <article className='article-p-light'>
                             <h2>Sobre Mi</h2>
                             <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Cuando haya perfeccionado mis habilidades en el Front End, comenzaré a trabajar en el Back End para convertirme en un programador Full Stack en el futuro.</p>
                     
@@ -94,7 +140,8 @@ const Header = () => {
 
                 <div id='habilidades' className="slider-view">
                     <section className='contianer-habilidades'>
-                        <article className='habilidades'>
+                    <h2>Habilidades</h2>
+                        <article className='habilidades-Light'>
                             <div>
                                 <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup}/>
                                 <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tambien escuchar correciones para poder aprender.</p>
@@ -124,10 +171,11 @@ const Header = () => {
                 </div>
 
                 
+                {/*--Tecnologias-*/}
                 <div id='tecnologias' className="slider-view">
                     <section className='contianer-tecnologias'>
+                        <h2>Tecnologias</h2>
                         <article className='tecnologias'>
-
                             <div className='div'>
                                 <FontAwesomeIcon className='icon html' icon={faHtml5}/>
                             </div>
@@ -167,18 +215,21 @@ const Header = () => {
 
 {/*--Proyectos-*/}
                 <div id='proyectos' className="slider-view">
-                    <section className='contianer-Proyectos'>
-                        <article className='article'>
-                            
-                            <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
-                            <div className='posicionh2'>
-                                <h2>E-commerce</h2>
-                            </div>
-                            <div className='posicionp'>
-                                <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
-                            </div>
+                    <section className='contianer-Proyectos-light'>
+                        <div>
+                            <h2>Proyectos</h2>
+                        </div>
+                        <div>
+                            <article className='article'>
+                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
+                                    <div className='posicionh2'>
+                                        <h2>E-commerce</h2>
+                                    </div>
+                                    <div className='posicionp'>
+                                        <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                    </div>
                                 
-                            <span>HTML, CSS, React</span>
+                                <span>HTML, CSS, React</span>
                             
                         </article>
 
@@ -223,16 +274,375 @@ const Header = () => {
                             <span>HTML, CSS, React</span>
                             
                         </article>
-
+                        </div>
                         </section>
                 </div>
 
 
 
+                <div id='contacto' className="slider-view">
+                        <section className='contianer-contacto'>
+                            <article>
+                                    <div className="content">
+                                        <div className="contact-wrapper">
+                                            <div className="contact-form-dark">
+                                                <form>
+                                                    <p>
+                                                        <label>Nombre</label>
+                                                            <input type="text" name='user_name' id="input1"/>
+                                                    </p>
+
+                                                    <p>
+                                                        <label>Email</label>
+                                                        <input type="email" name='user_email' id="input2" required/>
+                                                    </p>
+
+                                                    <p>
+                                                        <label>Motivo</label>
+                                                        <input type="text" name="message" id="input3"/>
+                                                    </p>
+
+                                                    <p className='block'>
+                                                        <label>Mensaje</label>
+                                                        <textarea name="message"id="input4" rows="3"></textarea>
+                                                    </p>
+                                                    <p className='block'>
+                                                        <button type="submit" value="Send">
+                                                            Enviar
+                                                        </button>
+                                                    </p>
+                                                </form>
+                                            </div>
+                                            <div className="contact-info-dark">
+                                                <h2>Mas Info</h2>
+                                                <ul className='ul'>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>Cordoba Argentina
+                                                    </li>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>+54 9 351-341-3701
+                                                    </li>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>lautarorodriguezovalle@gmail.com
+                                                    </li>
+                                                </ul>
+                                                    <p>
+                                                        React developer junior sin experiencia laboral, con muchas ganas de aprender y trabajar.
+                                                    </p>
+
+                                                    <p>
+                                                        Lautaro Rodriguez Ovalle
+                                                    </p>
+                                                </div>
                 
+                                        </div>
+                                    </div>    
+                            </article>
+                        </section>
+                </div>
         </main>
         </div>
-    </>
+        </>
+
+
+
+            :
+
+
+
+
+
+
+
+
+
+
+            <>
+            <div className='container-buttons'>
+                <button><FontAwesomeIcon className='iconoHeader' icon={faLinkedin}/></button>
+                <button><FontAwesomeIcon onClick={() => setEstado(!estado)} className='iconoHeader' icon={faSun}/></button>
+            </div>
+    
+            <div className='Container-header-dark'>
+            
+            {/*--Header-*/}
+        
+    
+            <header className='header-dark'>
+                <nav className='nav-dark'>
+                    <ul className='ul-dark'>
+                        <a onClick={cambiar} className='activo-dark' href='#sobre'>Sobre Mi</a>
+                        <a href='#habilidades' onClick={cambiar}>Habilidades</a>
+                        <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
+                        <a onClick={cambiar} href='#proyectos'>Proyectos</a>
+                        <a onClick={cambiar} href='#contacto'>Contacto</a>
+                    </ul>
+                </nav>
+                <nav className='nav-light-selec'>
+                <input type="checkbox" id='check' checked={isChecked} onChange={handleCheckboxClick}></input>
+                <label htmlFor="check">{selectedOption}</label>
+
+                    <ul className='ulSelect'>
+                        <li>
+                            <a value="sobre" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>Sobre Mi</a>
+                        </li>
+
+                        <li>
+                            <a value="habilidades" href="#habilidades" onClick={handleCheckboxClick} className=''>Habilidades</a>
+                        </li>
+
+                        <li>
+                            <a value="tecnologias" href="#tecnologias"  onClick={handleCheckboxClick} className=''>Tecnologias</a>
+                        </li>
+
+                        <li>
+                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                        </li>
+
+                        <li>
+                            <a  onClick={handleCheckboxClick}>Contacto</a>
+                        </li>
+                    </ul>
+            </nav>
+            </header>
+    
+    
+    
+            
+            {/*--Info Personal--*/}
+    
+            <main className="container-all">
+                    <div id='sobre' className="slider-view">
+                        <section className='contianer-info'>
+                            <article className='article-p-dark'>
+                                <h2>Sobre Mi</h2>
+                                <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Cuando haya perfeccionado mis habilidades en el Front End, comenzaré a trabajar en el Back End para convertirme en un programador Full Stack en el futuro.</p>
+                        
+                            </article>
+                            
+                            <article className='article-img'>
+                                <img src={foto}/>
+                            </article>
+                            </section>
+                    </div>
+    
+    
+                    {/*--Habilidades-*/}
+    
+                    <div id='habilidades' className="slider-view">
+                        <section className='contianer-habilidades'>
+                        <h2>Habilidades</h2>
+                            <article className='habilidades-dark'>
+                                <div>
+                                    <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup}/>
+                                    <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tambien escuchar correciones para poder aprender.</p>
+                                </div>
+    
+                                <div>
+                                    <FontAwesomeIcon className='iconoHabilidades' icon={faLightbulb}/>
+                                    <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                </div>
+    
+                                <div>
+                                    <FontAwesomeIcon className='iconoHabilidades' icon={faCode}/>
+                                    <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                </div>
+    
+                                <div>
+                                    <FontAwesomeIcon className='iconoHabilidades' icon={faArrowTrendUp}/>
+                                    <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                </div>
+    
+                                <div>
+                                    <FontAwesomeIcon className='iconoHabilidades' icon={faGear}/>
+                                    <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+    
+                    
+                    <div id='tecnologias' className="slider-view">
+                        <section className='contianer-tecnologias'>
+                        <h2>Tecnologias</h2>
+                            <article className='tecnologias-dark'>
+    
+                                <div className='div'>
+                                    <FontAwesomeIcon className='icon html' icon={faHtml5}/>
+                                </div>
+    
+                                <div className='div'>
+                                            <FontAwesomeIcon className='icon' icon={faCss3}/>
+                                </div>
+    
+                                <div className='div'>
+                                        <FontAwesomeIcon className='icon' icon={faJs}/>
+                                </div>
+    
+                                <div className='div'>
+                                    <FontAwesomeIcon className='icon' icon={faSass}/>
+                                </div>
+    
+                                <div className='div'>
+                                    <FontAwesomeIcon className='icon' icon={faGit}/>
+                                </div>
+    
+                                <div className='div'>
+                                    <FontAwesomeIcon className='icon' icon={faGithub}/>
+                                </div>
+    
+                                <div className='div'>
+                                            <FontAwesomeIcon className='icon' icon={faBootstrap}/>
+                                </div>
+    
+                                <div className='div'>
+                                    <FontAwesomeIcon className='icon' icon={faReact}/>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+    
+    
+    
+    {/*--Proyectos-*/}
+                    <div id='proyectos' className="slider-view">
+                        <section className='contianer-Proyectos'>
+                        <div>
+                            <h2>Proyectos</h2>
+                        </div>
+                        <div>
+                            <article className='article-light'>
+                                
+                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
+                                <div className='posicionh2'>
+                                    <h2>E-commerce</h2>
+                                </div>
+                                <div className='posicionp'>
+                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                </div>
+                                    
+                                <span>HTML, CSS, React</span>
+                                
+                            </article>
+    
+                            <article className='article-light'>
+                                
+                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
+                                <div className='posicionh2'>
+                                    <h2>E-commerce</h2>
+                                </div>
+                                <div className='posicionp'>
+                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                </div>
+                                    
+                                <span>HTML, CSS, React</span>
+                                
+                            </article>
+
+                            <article className='article-light'>
+                                
+                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
+                                <div className='posicionh2'>
+                                    <h2>E-commerce</h2>
+                                </div>
+                                <div className='posicionp'>
+                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                </div>
+                                    
+                                <span>HTML, CSS, React</span>
+                                
+                            </article>
+
+                            <article className='article-light'>
+                                
+                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1}/></a>
+                                <div className='posicionh2'>
+                                    <h2>E-commerce</h2>
+                                </div>
+                                <div className='posicionp'>
+                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                </div>
+                                    
+                                <span>HTML, CSS, React</span>
+                                
+                            </article>
+                            </div>
+                            </section>
+                    </div>
+
+
+                    <div id='contacto' className="slider-view">
+                        <section className='contianer-contacto'>
+                            <article>
+                                    <div className="content">
+                                        <div className="contact-wrapper">
+                                            <div className="contact-form">
+                                                <form>
+                                                    <p>
+                                                        <label>Nombre</label>
+                                                            <input type="text" name='user_name' id="input1"/>
+                                                    </p>
+
+                                                    <p>
+                                                        <label>Email</label>
+                                                        <input type="email" name='user_email' id="input2" required/>
+                                                    </p>
+
+                                                    <p>
+                                                        <label>Motivo</label>
+                                                        <input type="text" name="message" id="input3"/>
+                                                    </p>
+
+                                                    <p className='block'>
+                                                        <label>Mensaje</label>
+                                                        <textarea name="message"id="input4" rows="3"></textarea>
+                                                    </p>
+                                                    <p className='block'>
+                                                        <button type="submit" value="Send">
+                                                            Enviar
+                                                        </button>
+                                                    </p>
+                                                </form>
+                                            </div>
+                                            <div className="contact-info">
+                                                <h2>Mas Info</h2>
+                                                <ul className='ul'>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>Cordoba Argentina
+                                                    </li>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>+54 9 351-341-3701
+                                                    </li>
+                                                    <li>
+                                                        <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>lautarorodriguezovalle@gmail.com
+                                                    </li>
+                                                </ul>
+                                                    <p>
+                                                        React developer junior sin experiencia laboral, con muchas ganas de aprender y trabajar.
+                                                    </p>
+
+                                                    <p>
+                                                        Lautaro Rodriguez Ovalle
+                                                    </p>
+                                                </div>
+                
+                                        </div>
+                                    </div>    
+                            </article>
+                        </section>
+                </div>
+    
+    
+    
+                    
+            </main>
+            </div>
+            </>
+
+
+
+        }
+    </body>
     )
 }
 
