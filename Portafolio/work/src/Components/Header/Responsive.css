@@ -190,6 +190,9 @@
     .habilidades-Light div,
     .habilidades-dark div{
         width: 15em;
+        position: relative;
+        top: 10px;
+    
     }
 }
 

@@ -105,6 +105,7 @@ nav ul a:hover{
     border-radius: 3em;
     margin: 0em 1em;
     cursor:pointer;
+    animation: main 5s linear;
 }
 
 .iconoHeader{
@@ -579,7 +580,7 @@ nav ul a:hover{
     position: relative;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 1;
 }
 
 .formulario{
