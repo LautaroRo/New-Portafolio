@@ -1,6 +1,7 @@
 .Container-header-dark{
-    background:linear-gradient(rgba(0,0,0, 0.35) 0%, rgba(0,0,0, 0.35) 100%),url("./../../Assets//gif2.gif");
+    background:linear-gradient(rgba(0,0,0, 0.55) 0%, rgba(0,0,0, 0.55) 100%),url("./../../Assets//gif2.gif");
     height: 100vh; 
+    background-position: center center;
     background-size: cover;
     position: fixed;
     top: 0;
@@ -239,7 +240,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 1;
 }
 
 .formulario{

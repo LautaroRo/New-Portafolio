@@ -109,7 +109,7 @@ const Header = () => {
                                         </li>
 
                                         <li>
-                                            <a onClick={handleCheckboxClick}>Contacto</a>
+                                            <a value="contacto" href="#contacto" onClick={handleCheckboxClick} className=''>Contacto</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -396,7 +396,7 @@ const Header = () => {
                                         </li>
 
                                         <li>
-                                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                                            <a value="contacto" href="#contacto" onClick={handleCheckboxClick} className=''>Proyectos</a>
                                         </li>
 
                                         <li>
