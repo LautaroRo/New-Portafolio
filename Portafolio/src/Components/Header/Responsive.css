@@ -226,10 +226,64 @@
 }
 
 
+/*--Contact-*/
 
+@media screen and (min-width:700px) {
+    .contact-wrapper{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contact-wrapper > *{
+        padding: 2em;
+    }
+
+    .contact-info h4,
+    .contact-info .ul,
+    .contact-info p{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1em;
+    }
+}
+@media screen and (max-width:700px){
+    .contact-info,
+    .contact-info-dark{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #contacto .contianer-contacto,
+    .contianer-contacto-light{
+        overflow-y: auto;
+        margin-top: 7%;
+        align-items: start;
+        justify-content: normal;
+    }
+}
+
+@media screen and (max-width:620px){
+    .contact-info-dark,
+    .contact-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contact-info .ul,
+    .contact-info-dark .ul{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 
     /*-ScrollBar--*/
+    .contianer-contacto-light::-webkit-scrollbar,
     #contacto .contianer-contacto::-webkit-scrollbar,
     .contianer-Proyectos-light::-webkit-scrollbar,
     .habilidades-Light::-webkit-scrollbar,
@@ -240,7 +294,7 @@
         width: 8px; /* Ancho del scrollbar */
         height: 20%;
     }
-
+    .contianer-contacto-light::-webkit-scrollbar-track,
     #contacto .contianer-contacto::-webkit-scrollbar-track,
     .contianer-Proyectos-light::-webkit-scrollbar-track
     .habilidades-Light::-webkit-scrollbar-track,
@@ -251,7 +305,7 @@
         background-color: transparent; /* Color del fondo del scrollbar */
     }
 
-
+    .contianer-contacto-light::-webkit-scrollbar-thumb,
     #contacto .contianer-contacto::-webkit-scrollbar-thumb,
     .contianer-Proyectos-light::-webkit-scrollbar-thumb,
     .habilidades-Light::-webkit-scrollbar-thumb,
@@ -270,6 +324,7 @@
     .contianer-Proyectos-light::-webkit-scrollbar-thumb:hover{
         background-color: #1824d8; /* Color del scrollbar cuando se hace hover */
     }
+    .contianer-contacto-light::-webkit-scrollbar-thumb:hover,
     .contianer-Proyectos::-webkit-scrollbar-thumb:hover,
     .tecnologias-dark::-webkit-scrollbar-thumb:hover,
     .habilidades-dark::-webkit-scrollbar-thumb:hover{

@@ -97,16 +97,24 @@ nav ul a:hover{
     z-index: 1;
     bottom: 50px;
     left: 30px;
+    display: flex;
+    flex-direction: row;
+    animation: main 5s linear;
 }
 
 
-.container-buttons button{
+.container-buttons button,
+.container-buttons a    {
     color: black;
     padding: .7em .9em;
     border-radius: 3em;
     margin: 0em 1em;
     cursor:pointer;
-    animation: main 5s linear;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .iconoHeader{
@@ -571,7 +579,8 @@ nav ul a:hover{
 
 /*--Contacto-*/
 
-.contianer-contacto{
+.contianer-contacto,
+.contianer-contacto-light{
     display: flex;
     height: 100%;
     width: 100em;
@@ -581,7 +590,6 @@ nav ul a:hover{
     z-index: 1;
     flex-direction: column;
     margin-bottom: 3%;
-    margin-top: 15%;
 }
 
 .formulario{
@@ -691,53 +699,4 @@ form p label::after{
     border-radius: 5px;
     border: 1px solid white;
     display: block;
-}
-
-
-@media screen and (min-width:700px) {
-    .contact-wrapper{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .contact-wrapper > *{
-        padding: 2em;
-    }
-
-    .contact-info h4,
-    .contact-info .ul,
-    .contact-info p{
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        align-items: flex-start;
-        text-align: left;
-        padding: 1em;
-    }
-}
-@media screen and (max-width:700px){
-    .contact-info-dark{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    #contacto .contianer-contacto {
-        display: flex;
-        align-items: start;
-        overflow-y: auto;
-    }
-}
-
-@media screen and (max-width:620px){
-    .contact-info-dark{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    .contact-info-dark .ul{
-        display: flex;
-        flex-direction: column;
-    }
 }

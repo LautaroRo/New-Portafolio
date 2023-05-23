@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import "./estilos.css"
 import "./estilos2.css"
 import "./Responsive.css"
@@ -7,7 +7,8 @@ import img1 from "./../../Assets/img1.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2"
 
 const Header = () => {
     const [selectedOption, setSelectedOption] = useState('sobre');
@@ -49,6 +50,46 @@ const Header = () => {
         }
         setIsChecked(!isChecked);
     }
+
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        const input1 = document.getElementById("input1")
+        const input2 = document.getElementById("input2")
+        const input3 = document.getElementById("input3")
+        const input4 = document.getElementById("input4")
+        
+        if(input1.value.length > 2 || input3.value.length > 4 || input4.value.length > 5){
+            emailjs.sendForm("service_6td7czh", "template_l7sg8cu", form.current, "zLduDFw1jxUYLdXlK")
+            
+            .then(()=>{
+                input1.value= ""
+                input2.value= ""
+                input3.value= ""
+                input4.value= ""
+    
+                Swal.fire({
+                    title:"Formulario Enviado",
+                    text:`Muchas gracias por comunicarte. En breve estaremos respondiendo`,
+                    icon:"success",
+                    background:"black",
+                    color:"white"
+                })
+            })
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Profavor complete el formulario'
+                })
+            }
+        }
+
+
+
+
     return (
         <body>
             {/*--Nombre Animacion-*/}
@@ -67,7 +108,7 @@ const Header = () => {
                     ?
                     <>
                         <div className='container-buttons'>
-                            <button><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></button>
+                            <a><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
                             <button onClick={() => setEstado(!estado)}><FontAwesomeIcon className='iconoHeader' icon={faSun} /></button>
                         </div>
 
@@ -286,7 +327,7 @@ const Header = () => {
                                             <div className="content">
                                                 <div className="contact-wrapper">
                                                     <div className="contact-form-dark">
-                                                        <form>
+                                                        <form ref={form} onSubmit={sendEmail}>
                                                             <p>
                                                                 <label>Nombre</label>
                                                                 <input type="text" name='user_name' id="input1" />
@@ -573,7 +614,7 @@ const Header = () => {
 
                                 {/*--Contacto-*/}
                                 <div id='contacto' className="slider-view">
-                                    <section className='contianer-contacto'>
+                                    <section className='contianer-contacto-light'>
                                         <div>
                                             <h2>Contacto</h2>
                                         </div>
