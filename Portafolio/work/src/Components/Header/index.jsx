@@ -279,7 +279,7 @@ const Header = () => {
                                 </div>
 
 
-
+                                {/*--Contacto-*/}
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto'>
                                         <article>
@@ -396,11 +396,11 @@ const Header = () => {
                                         </li>
 
                                         <li>
-                                            <a value="contacto" href="#contacto" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
                                         </li>
 
                                         <li>
-                                            <a onClick={handleCheckboxClick}>Contacto</a>
+                                            <a value="contacto" href='#contacto' onClick={handleCheckboxClick}>Contacto</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -571,8 +571,12 @@ const Header = () => {
                                 </div>
 
 
+                                {/*--Contacto-*/}
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto'>
+                                        <div>
+                                            <h2>Contacto</h2>
+                                        </div>
                                         <article>
                                             <div className="content">
                                                 <div className="contact-wrapper">

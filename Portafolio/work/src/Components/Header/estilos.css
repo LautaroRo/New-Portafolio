@@ -579,7 +579,9 @@ nav ul a:hover{
     justify-content: center;
     align-items: center;
     z-index: 1;
+    flex-direction: column;
     margin-bottom: 3%;
+    margin-top: 15%;
 }
 
 .formulario{
@@ -598,26 +600,6 @@ nav ul a:hover{
     margin-right: auto;
     padding: 1.5em;
 }
-
-.logo{
-    font-size: 3em;
-    position: relative;
-    color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.logo::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    border-radius: 5px;
-    transition: transform .5s;
-    border: 1px solid white;
-    display: block;
-    animation: descr 2s ease infinite;
-    transform: scaleX(0);
-}
-
 
 
 .contact-wrapper > *{

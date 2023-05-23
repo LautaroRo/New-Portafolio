@@ -104,7 +104,7 @@
         width: 18em;
         padding: 0px 0px 0px 0px;
         margin: 0;
-        top: 80px;
+        top: 30px;
     }
 
 
@@ -227,7 +227,10 @@
 
 
 
+
+
     /*-ScrollBar--*/
+    #contacto .contianer-contacto::-webkit-scrollbar,
     .contianer-Proyectos-light::-webkit-scrollbar,
     .habilidades-Light::-webkit-scrollbar,
     .tecnologias::-webkit-scrollbar,
@@ -238,6 +241,7 @@
         height: 20%;
     }
 
+    #contacto .contianer-contacto::-webkit-scrollbar-track,
     .contianer-Proyectos-light::-webkit-scrollbar-track
     .habilidades-Light::-webkit-scrollbar-track,
     .tecnologias::-webkit-scrollbar-track,
@@ -247,6 +251,8 @@
         background-color: transparent; /* Color del fondo del scrollbar */
     }
 
+
+    #contacto .contianer-contacto::-webkit-scrollbar-thumb,
     .contianer-Proyectos-light::-webkit-scrollbar-thumb,
     .habilidades-Light::-webkit-scrollbar-thumb,
     .tecnologias::-webkit-scrollbar-thumb,
@@ -258,13 +264,12 @@
     }
 
 
-    
+    #contacto .contianer-contacto::-webkit-scrollbar-thumb:hover,
     .habilidades-Light::-webkit-scrollbar-thumb:hover,
     .tecnologias::-webkit-scrollbar-thumb:hover,
     .contianer-Proyectos-light::-webkit-scrollbar-thumb:hover{
         background-color: #1824d8; /* Color del scrollbar cuando se hace hover */
     }
-
     .contianer-Proyectos::-webkit-scrollbar-thumb:hover,
     .tecnologias-dark::-webkit-scrollbar-thumb:hover,
     .habilidades-dark::-webkit-scrollbar-thumb:hover{
