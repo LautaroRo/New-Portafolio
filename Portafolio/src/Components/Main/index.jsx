@@ -272,7 +272,7 @@ const Header = () => {
                                                 </div>
 
                                                 <div className='divSpan'>
-                                                    <span>HTML, CSS, React</span>  <span className='spanGit' href='https://github.com/LautaroRo/Practicando-con-css'>GitHub</span>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Practicando-con-css.git'>GitHub</a></span>
                                                 </div>
 
                                             </article>
@@ -288,7 +288,7 @@ const Header = () => {
                                                 </div>
 
                                                 <div className='divSpan'>
-                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://github.com/LautaroRo/Practicando-con-css'></a> GitHub</span>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Calculadora.git'>GitHub</a></span>
                                                 </div>
                                                 
 
@@ -544,7 +544,7 @@ const Header = () => {
                                                 </div>
 
                                                 <div className='divSpan'>
-                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://github.com/LautaroRo/Practicando-con-css'>GitHub</a></span>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Practicando-con-css.git'>GitHub</a></span>
                                                 </div>
 
                                             </article>
@@ -560,7 +560,7 @@ const Header = () => {
                                                 </div>
 
                                                 <div className='divSpan'>
-                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://calculadora-three-brown.vercel.app/'>GitHub</a></span>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Calculadora.git'>GitHub</a></span>
                                                 </div>
 
                                             </article>
