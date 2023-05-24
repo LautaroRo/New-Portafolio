@@ -455,8 +455,6 @@ nav ul a:hover{
     width: 100%;
     border: 1px solid white;
 }
-
-
 .article{
     display: flex;
     flex-direction: column;
@@ -469,18 +467,45 @@ nav ul a:hover{
 }
 
 
+
 .article a{
     height: 100%;
     width: 100%;
 }
 
-.article img{
+.article .img,
+.article-light .img{
     width: 100%;
     border-radius: 20px 20px 0px 0px;
     height: 100%;
+    transition: all .5s;
+}
+
+.article a:hover .img,
+.article-light a:hover .img{
+    transform: scale(1.1);
+    border-radius: 20px 20px 20px 20px;
+}
+
+.divSpan{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 
+.divSpan .spanGit{
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.spanGit a{
+    text-decoration: none;
+    color: white;
+}
+.divSpan .spanGit:hover{
+    transform: scale(1.5);
+}
 .article .posicionh2{
     display: flex;
     justify-content: start;
@@ -591,6 +616,23 @@ nav ul a:hover{
     flex-direction: column;
     margin-bottom: 3%;
 }
+
+.contianer-contacto div .h2,
+.contianer-contacto-light div .h2{
+    color: white;
+    position: relative
+}
+
+
+.contianer-contacto div .h2::after,
+.contianer-contacto-light div .h2::after{
+    position: absolute;
+    content: "";
+    display: block;
+    border: 1px solid white;
+    width: 100%;
+}
+
 
 .formulario{
     display: flex;

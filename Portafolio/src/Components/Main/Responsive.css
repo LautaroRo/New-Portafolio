@@ -145,6 +145,7 @@
         margin-top: 10px;
     }
 
+
 }
 
 @media screen and (max-width:500px){
@@ -184,6 +185,10 @@
     .habilidades-Light div p,
     .habilidades-dark div p{
         font-size: 1em;
+    }
+
+    .divSpan .spanGit{
+        margin-top: 3%;
     }
 }
 
@@ -261,7 +266,7 @@
     .contianer-contacto-light{
         overflow-y: auto;
         margin-top: 7%;
-        align-items: start;
+        align-items: center;
         justify-content: normal;
     }
 }
@@ -277,6 +282,8 @@
     .contact-info .ul,
     .contact-info-dark .ul{
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
     }
 }

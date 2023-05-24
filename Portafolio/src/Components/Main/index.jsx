@@ -4,6 +4,7 @@ import "./estilos2.css"
 import "./Responsive.css"
 import foto from "./../../Assets/Foto2.jpeg"
 import img1 from "./../../Assets/img1.jpeg"
+import img2 from "./../../Assets/img2.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -108,7 +109,7 @@ const Header = () => {
                     ?
                     <>
                         <div className='container-buttons'>
-                            <a><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
+                            <a href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
                             <button onClick={() => setEstado(!estado)}><FontAwesomeIcon className='iconoHeader' icon={faSun} /></button>
                         </div>
 
@@ -262,57 +263,34 @@ const Header = () => {
                                         </div>
                                         <div>
                                             <article className='article'>
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
+                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img className='img' src={img1} /></a>
                                                 <div className='posicionh2'>
                                                     <h2>E-commerce</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta.</p>
                                                 </div>
 
-                                                <span>HTML, CSS, React</span>
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit' href='https://github.com/LautaroRo/Practicando-con-css'>GitHub</span>
+                                                </div>
 
                                             </article>
 
                                             <article className='article'>
 
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
+                                                <a href="https://calculadora-three-brown.vercel.app/" target='_blank'><img className='img' src={img2} /></a>
                                                 <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
+                                                    <h2>Calculadora</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                                    <p>Calculadora totalmente funcional, con la que podras hacer cualquier operacion matematica sin problemas.</p>
                                                 </div>
 
-                                                <span>HTML, CSS, React</span>
-
-                                            </article>
-
-                                            <article className='article'>
-
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
-                                                <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://github.com/LautaroRo/Practicando-con-css'></a> GitHub</span>
                                                 </div>
-                                                <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
-                                                </div>
-
-                                                <span>HTML, CSS, React</span>
-
-                                            </article>
-
-                                            <article className='article'>
-
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
-                                                <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
-                                                </div>
-                                                <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
-                                                </div>
-
-                                                <span>HTML, CSS, React</span>
+                                                
 
                                             </article>
                                         </div>
@@ -323,6 +301,9 @@ const Header = () => {
                                 {/*--Contacto-*/}
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto'>
+                                        <div>
+                                            <h2 className='h2'>Contacto</h2>
+                                        </div>
                                         <article>
                                             <div className="content">
                                                 <div className="contact-wrapper">
@@ -554,57 +535,33 @@ const Header = () => {
                                         <div>
                                             <article className='article-light'>
 
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
+                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img className='img' src={img1} /></a>
                                                 <div className='posicionh2'>
                                                     <h2>E-commerce</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta.</p>
                                                 </div>
 
-                                                <span>HTML, CSS, React</span>
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://github.com/LautaroRo/Practicando-con-css'>GitHub</a></span>
+                                                </div>
 
                                             </article>
 
                                             <article className='article-light'>
 
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
+                                                <a href="https://calculadora-three-brown.vercel.app/" target='_blank'><img className='img' src={img2} /></a>
                                                 <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
+                                                    <h2>Calculadora</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
+                                                    <p>Calculadora totalmente funcional, con la que podras hacer cualquier operacion matematica sin problemas.</p>
                                                 </div>
 
-                                                <span>HTML, CSS, React</span>
-
-                                            </article>
-
-                                            <article className='article-light'>
-
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
-                                                <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a href='https://calculadora-three-brown.vercel.app/'>GitHub</a></span>
                                                 </div>
-                                                <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
-                                                </div>
-
-                                                <span>HTML, CSS, React</span>
-
-                                            </article>
-
-                                            <article className='article-light'>
-
-                                                <a href="https://practicando-con-css.vercel.app/" target='_blank'><img src={img1} /></a>
-                                                <div className='posicionh2'>
-                                                    <h2>E-commerce</h2>
-                                                </div>
-                                                <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta</p>
-                                                </div>
-
-                                                <span>HTML, CSS, React</span>
 
                                             </article>
                                         </div>
@@ -616,7 +573,7 @@ const Header = () => {
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto-light'>
                                         <div>
-                                            <h2>Contacto</h2>
+                                            <h2 className='h2'>Contacto</h2>
                                         </div>
                                         <article>
                                             <div className="content">
