@@ -5,6 +5,7 @@ import "./Responsive.css"
 import foto from "./../../Assets/Foto2.jpeg"
 import img1 from "./../../Assets/img1.jpeg"
 import img2 from "./../../Assets/img2.jpeg"
+import img3 from "./../../Assets/img3.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -18,20 +19,26 @@ const Header = () => {
     const [isChecked, setIsChecked] = useState(false);
 
 
-    const cambiar = (e) => {
-
+    const cambiarEstado = (e) =>{
         const query = document.querySelector(".activo")
         const queryDark = document.querySelector(".activo-dark")
+        query?.classList?.remove("activo")
+        queryDark?.classList?.remove("activo-dark")
+        setEstado(!estado)
+    }
 
-        if (query) {
-            query.classList?.remove("activo")
+    const cambiar = (e) => {
+        const query = document.querySelector(".activo")
+        const queryDark = document.querySelector(".activo-dark")
+        if(query){
+            query?.classList?.remove("activo")
             e.target.classList?.add("activo")
         }
-
-        if (queryDark) {
-            queryDark.classList?.remove("activo-dark")
+        if(queryDark){
+            queryDark?.classList?.remove("activo-dark")
             e.target.classList?.add("activo-dark")
         }
+
     }
 
 
@@ -110,7 +117,7 @@ const Header = () => {
                     <>
                         <div className='container-buttons'>
                             <a href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
-                            <button onClick={() => setEstado(!estado)}><FontAwesomeIcon className='iconoHeader' icon={faSun} /></button>
+                            <a href='#sobre' onClick={cambiarEstado}><FontAwesomeIcon className='iconoHeader' icon={faSun} /></a>
                         </div>
 
                         <div className='Container-header'>
@@ -121,7 +128,7 @@ const Header = () => {
                             <header className='header-light'>
                                 <nav className='nav-light'>
                                     <ul className='ul-light'>
-                                        <a onClick={cambiar} className='activo' href='#sobre'>Sobre Mi</a>
+                                        <a onClick={cambiar} href='#sobre' className='activo'>Sobre Mi</a>
                                         <a href='#habilidades' onClick={cambiar}>Habilidades</a>
                                         <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
                                         <a onClick={cambiar} href='#proyectos'>Proyectos</a>
@@ -293,6 +300,24 @@ const Header = () => {
                                                 
 
                                             </article>
+
+                                            <article className='article'>
+
+                                                <a href="https://poke-api-ecru.vercel.app/" target='_blank'><img className='img' src={img3} /></a>
+                                                <div className='posicionh2'>
+                                                    <h2>Poke Api</h2>
+                                                </div>
+                                                <div className='posicionp'>
+                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo no solo acceder a información detallada sobre los Pokémon y sus estadísticas, sino también brindando funcionalidades adicionales como la capacidad de filtrarlos por especies y mucho más.</p>
+                                                </div>
+
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/PokeAPI.git'>GitHub</a></span>
+                                                </div>
+
+                                            </article>
+
+                                            
                                         </div>
                                     </section>
                                 </div>
@@ -381,8 +406,8 @@ const Header = () => {
 
                     <>
                         <div className='container-buttons'>
-                            <button><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></button>
-                            <button><FontAwesomeIcon onClick={() => setEstado(!estado)} className='iconoHeader' icon={faSun} /></button>
+                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
+                            <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faSun} /></a>
                         </div>
 
                         <div className='Container-header-dark'>
@@ -393,7 +418,7 @@ const Header = () => {
                             <header className='header-dark'>
                                 <nav className='nav-dark'>
                                     <ul className='ul-dark'>
-                                        <a onClick={cambiar} className='activo-dark' href='#sobre'>Sobre Mi</a>
+                                        <a onClick={cambiar} href='#sobre' className="activo-dark">Sobre Mi</a>
                                         <a href='#habilidades' onClick={cambiar}>Habilidades</a>
                                         <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
                                         <a onClick={cambiar} href='#proyectos'>Proyectos</a>
@@ -560,7 +585,23 @@ const Header = () => {
                                                 </div>
 
                                                 <div className='divSpan'>
-                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Calculadora.git'>GitHub</a></span>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/PokeAPI.git'>GitHub</a></span>
+                                                </div>
+
+                                            </article>
+
+                                            <article className='article-light'>
+
+                                                <a href="https://poke-api-ecru.vercel.app/" target='_blank'><img className='img' src={img3} /></a>
+                                                <div className='posicionh2'>
+                                                    <h2>Poke Api</h2>
+                                                </div>
+                                                <div className='posicionp'>
+                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo no solo acceder a información detallada sobre los Pokémon y sus estadísticas, sino también brindando funcionalidades adicionales como la capacidad de filtrarlos por especies y mucho más.</p>
+                                                </div>
+
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/PokeAPI.git'>GitHub</a></span>
                                                 </div>
 
                                             </article>
