@@ -1,3 +1,9 @@
+@media screen and (max-width:1000px){
+    .Mi h2{
+        font-size: 2.3em;
+    }
+}
+
 @media screen and (max-width:1000px) {
     .contianer-info{
         display: flex;
@@ -15,7 +21,8 @@
         width: 50%;
     }
 
-    .contianer-info .article-p-light p{
+    .contianer-info .article-p-light p,
+    .contianer-info  .article-p-dark p{
         font-size: 1.2em;
     }
 }
@@ -58,7 +65,7 @@
     }
 
 
-    .nav-light-selec{
+    .nav-dark-selec{
         display: flex;
         position: relative;
         z-index: 3;
@@ -68,10 +75,10 @@
         outline: none;
         transition: all .5s;
     }
-    .nav-light-selec input{
+    .nav-dark-selec input{
         display: none;
     }
-    .nav-light-selec label{
+    .nav-dark-selec label{
         width: 100%;
         border-radius: 20px;
         border: none;
@@ -158,6 +165,61 @@
     .contianer-info article img {
         height: 120px;
     }
+
+    .BtonFlecha{
+        display: flex;
+    }
+
+
+    .container-buttons{
+        position: fixed;
+        z-index: -1;
+        bottom: 30px;
+        left: 90px;
+        display: flex;
+        flex-direction: row;
+        background-color:rgba(202, 202, 202, 0.315);
+        border-radius: 10px;
+        opacity: -1;
+        animation: noMostrar .5s linear;
+    }
+
+    @keyframes noMostrar{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: -1;
+        }
+    }
+
+    .container-buttons-flex{
+        position: fixed;
+        z-index: 1;
+        bottom: 30px;
+        left: 90px;
+        display: flex;
+        flex-direction: row;
+        background-color:rgba(202, 202, 202, 0.315);
+        border-radius: 10px;
+        animation: mostrar .5s linear;
+    }
+
+    @keyframes mostrar {
+        0%{
+            transform: translateX(-300px);
+        }
+        100%{
+            transform: translateX(0px);
+        }
+    }
+
+    .container-buttons-flex a{
+        margin: 1em 1.5em;
+        background: rgba(136, 135, 130, 0.479);
+        padding: .5em .8em;
+        border-radius: 10px;
+    }
 }
 
 
@@ -171,29 +233,25 @@
         position: relative;
     }
     .habilidades-dark,
-    .habilidades-Light{
+    .habilidades-light{
         overflow-y: auto;
     }
 }
 
 @media screen and (max-width:700px){
-    .habilidades-Light div,
+    .habilidades-light div,
     .habilidades-dark div{
         width: 18em;
     }
 
-    .habilidades-Light div p,
+    .habilidades-light div p,
     .habilidades-dark div p{
         font-size: 1em;
-    }
-
-    .divSpan .spanGit{
-        margin-top: 3%;
     }
 }
 
 @media screen and (max-width:450px){
-    .habilidades-Light div,
+    .habilidades-light div,
     .habilidades-dark div{
         width: 15em;
         position: relative;
@@ -292,33 +350,33 @@
     /*-ScrollBar--*/
     .contianer-contacto-light::-webkit-scrollbar,
     #contacto .contianer-contacto::-webkit-scrollbar,
-    .contianer-Proyectos-light::-webkit-scrollbar,
-    .habilidades-Light::-webkit-scrollbar,
-    .tecnologias::-webkit-scrollbar,
     .contianer-Proyectos::-webkit-scrollbar,
-    .tecnologias-dark::-webkit-scrollbar,
+    .habilidades-light::-webkit-scrollbar,
+    .tecnologias::-webkit-scrollbar,
+    .contianer-Proyectos-dark::-webkit-scrollbar,
+    .tecnologias-light::-webkit-scrollbar,
     .habilidades-dark::-webkit-scrollbar{
         width: 8px; /* Ancho del scrollbar */
         height: 20%;
     }
     .contianer-contacto-light::-webkit-scrollbar-track,
     #contacto .contianer-contacto::-webkit-scrollbar-track,
-    .contianer-Proyectos-light::-webkit-scrollbar-track
-    .habilidades-Light::-webkit-scrollbar-track,
+    .contianer-Proyectos::-webkit-scrollbar-track
+    .habilidades-light::-webkit-scrollbar-track,
     .tecnologias::-webkit-scrollbar-track,
-    .contianer-Proyectos::-webkit-scrollbar-track,
-    .tecnologias-dark::-webkit-scrollbar-track,
+    .contianer-Proyectos-dark::-webkit-scrollbar-track,
+    .tecnologias-light::-webkit-scrollbar-track,
     .habilidades-dark::-webkit-scrollbar-track {
         background-color: transparent; /* Color del fondo del scrollbar */
     }
 
     .contianer-contacto-light::-webkit-scrollbar-thumb,
     #contacto .contianer-contacto::-webkit-scrollbar-thumb,
-    .contianer-Proyectos-light::-webkit-scrollbar-thumb,
-    .habilidades-Light::-webkit-scrollbar-thumb,
-    .tecnologias::-webkit-scrollbar-thumb,
     .contianer-Proyectos::-webkit-scrollbar-thumb,
-    .tecnologias-dark::-webkit-scrollbar-thumb,
+    .habilidades-light::-webkit-scrollbar-thumb,
+    .tecnologias::-webkit-scrollbar-thumb,
+    .contianer-Proyectos-dark::-webkit-scrollbar-thumb,
+    .tecnologias-light::-webkit-scrollbar-thumb,
     .habilidades-dark::-webkit-scrollbar-thumb {
         background-color: white; /* Color del scrollbar */
         border-radius: 5px; /* Radio de borde del scrollbar */
@@ -326,15 +384,15 @@
 
 
     #contacto .contianer-contacto::-webkit-scrollbar-thumb:hover,
-    .habilidades-Light::-webkit-scrollbar-thumb:hover,
+    .habilidades-dark::-webkit-scrollbar-thumb:hover,
     .tecnologias::-webkit-scrollbar-thumb:hover,
-    .contianer-Proyectos-light::-webkit-scrollbar-thumb:hover{
+    .contianer-Proyectos-dark::-webkit-scrollbar-thumb:hover{
         background-color: #1824d8; /* Color del scrollbar cuando se hace hover */
     }
     .contianer-contacto-light::-webkit-scrollbar-thumb:hover,
     .contianer-Proyectos::-webkit-scrollbar-thumb:hover,
-    .tecnologias-dark::-webkit-scrollbar-thumb:hover,
-    .habilidades-dark::-webkit-scrollbar-thumb:hover{
+    .tecnologias-light::-webkit-scrollbar-thumb:hover,
+    .habilidades-light::-webkit-scrollbar-thumb:hover{
         background-color: #d8a109; /* Color del scrollbar cuando se hace hover */
     }
 

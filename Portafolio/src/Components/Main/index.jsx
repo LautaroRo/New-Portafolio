@@ -8,14 +8,13 @@ import img2 from "./../../Assets/img2.jpeg"
 import img3 from "./../../Assets/img3.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope, faMoon, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2"
 
 const Header = () => {
     const [selectedOption, setSelectedOption] = useState('sobre');
     const [estado, setEstado] = useState(false)
-
     const [isChecked, setIsChecked] = useState(false);
 
 
@@ -25,6 +24,11 @@ const Header = () => {
         query?.classList?.remove("activo")
         queryDark?.classList?.remove("activo-dark")
         setEstado(!estado)
+        const clase2 = document.querySelector(".container-buttons-flex")
+        if(clase2){
+            clase2?.classList?.remove("container-buttons-flex")
+            clase2?.classList?.add("container-buttons")
+        }
     }
 
     const cambiar = (e) => {
@@ -42,6 +46,23 @@ const Header = () => {
     }
 
 
+    const MostarButtons = (e) => {
+
+        e.preventDefault()
+
+        const clase = document.querySelector(".container-buttons")
+        const clase2 = document.querySelector(".container-buttons-flex")
+
+        if(clase){
+            clase?.classList?.remove("container-buttons")
+            clase?.classList?.add("container-buttons-flex")
+        }else if(clase2){
+            clase2?.classList?.remove("container-buttons-flex")
+            clase2?.classList?.add("container-buttons")
+        }else if(undefined){
+            console.log("error")
+        }
+    }
 
     const handleCheckboxClick = (e) => {
 
@@ -116,8 +137,11 @@ const Header = () => {
                     ?
                     <>
                         <div className='container-buttons'>
-                            <a href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
-                            <a href='#sobre' onClick={cambiarEstado}><FontAwesomeIcon className='iconoHeader' icon={faSun} /></a>
+                            <a href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
+                            <a href='#sobre' onClick={cambiarEstado}><FontAwesomeIcon className='iconoHeaderSun' icon={faSun} /></a>
+                        </div>
+                        <div className='BtonFlecha'>
+                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft}/></button>
                         </div>
 
                         <div className='Container-header'>
@@ -125,9 +149,9 @@ const Header = () => {
                             {/*--Header-*/}
 
 
-                            <header className='header-light'>
-                                <nav className='nav-light'>
-                                    <ul className='ul-light'>
+                            <header className='header-dark'>
+                                <nav className='nav-dark'>
+                                    <ul className='ul-dark'>
                                         <a onClick={cambiar} href='#sobre' className='activo'>Sobre Mi</a>
                                         <a href='#habilidades' onClick={cambiar}>Habilidades</a>
                                         <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
@@ -136,7 +160,7 @@ const Header = () => {
                                     </ul>
                                 </nav>
 
-                                <nav className='nav-light-selec'>
+                                <nav className='nav-dark-selec'>
                                     <input type="checkbox" id='check' checked={isChecked} onChange={handleCheckboxClick}></input>
                                     <label htmlFor="check">{selectedOption}</label>
 
@@ -172,7 +196,7 @@ const Header = () => {
                             <main className="container-all">
                                 <div id='sobre' className="slider-view">
                                     <section className='contianer-info'>
-                                        <article className='article-p-light'>
+                                        <article className='article-p-dark'>
                                             <h2>Sobre Mi</h2>
                                             <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Cuando haya perfeccionado mis habilidades en el Front End, comenzaré a trabajar en el Back End para convertirme en un programador Full Stack en el futuro.</p>
 
@@ -190,30 +214,25 @@ const Header = () => {
                                 <div id='habilidades' className="slider-view">
                                     <section className='contianer-habilidades'>
                                         <h2>Habilidades</h2>
-                                        <article className='habilidades-Light'>
+                                        <article className='habilidades-dark'>
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tambien escuchar correciones para poder aprender.</p>
+                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda y tambien escuchar correciones para poder aprender.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faLightbulb} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Soy una persona con mucha creatividad en la que me ayuda a poder encontrar soluciones a diferentes problemas, ya que hay diferentes soluciones para cada problema.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faCode} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Me encanta la programacion por lo cual puedo estar horas sentado en mi silla programando sin notar que es una carga sino como algo divertido, ya que al practicar al mismo tiempo aprendo.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faArrowTrendUp} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
-                                            </div>
-
-                                            <div>
-                                                <FontAwesomeIcon className='iconoHabilidades' icon={faGear} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Tengo un largo camino en mi carrera de programador pero cada dia avanzo ya sea con un curso nuevo o practicando con diferentes proyectos, disfrutando el camino del aprendizage. </p>
                                             </div>
                                         </article>
                                     </section>
@@ -264,7 +283,7 @@ const Header = () => {
 
                                 {/*--Proyectos-*/}
                                 <div id='proyectos' className="slider-view">
-                                    <section className='contianer-Proyectos-light'>
+                                    <section className='contianer-Proyectos-dark'>
                                         <div>
                                             <h2>Proyectos</h2>
                                         </div>
@@ -406,18 +425,20 @@ const Header = () => {
 
                     <>
                         <div className='container-buttons'>
-                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeader' icon={faLinkedin} /></a>
-                            <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faSun} /></a>
+                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
+                            <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faMoon} /></a>
                         </div>
-
-                        <div className='Container-header-dark'>
+                        <div className='BtonFlecha'>
+                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft}/></button>
+                        </div>
+                        <div className='Container-header-light'>
 
                             {/*--Header-*/}
 
 
-                            <header className='header-dark'>
-                                <nav className='nav-dark'>
-                                    <ul className='ul-dark'>
+                            <header className='header-light'>
+                                <nav className='nav-light'>
+                                    <ul className='ul-light'>
                                         <a onClick={cambiar} href='#sobre' className="activo-dark">Sobre Mi</a>
                                         <a href='#habilidades' onClick={cambiar}>Habilidades</a>
                                         <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
@@ -425,7 +446,7 @@ const Header = () => {
                                         <a onClick={cambiar} href='#contacto'>Contacto</a>
                                     </ul>
                                 </nav>
-                                <nav className='nav-light-selec'>
+                                <nav className='nav-dark-selec'>
                                     <input type="checkbox" id='check' checked={isChecked} onChange={handleCheckboxClick}></input>
                                     <label htmlFor="check">{selectedOption}</label>
 
@@ -479,30 +500,25 @@ const Header = () => {
                                 <div id='habilidades' className="slider-view">
                                     <section className='contianer-habilidades'>
                                         <h2>Habilidades</h2>
-                                        <article className='habilidades-dark'>
+                                        <article className='habilidades-light'>
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tambien escuchar correciones para poder aprender.</p>
+                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda y tambien escuchar correciones para poder aprender.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faLightbulb} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Soy una persona con mucha creatividad en la que me ayuda a poder encontrar soluciones a diferentes problemas, ya que hay diferentes soluciones para cada problema.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faCode} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Me encanta la programacion por lo cual puedo estar horas sentado en mi silla programando sin notar que es una carga sino como algo divertido, ya que al practicar al mismo tiempo aprendo.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faArrowTrendUp} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
-                                            </div>
-
-                                            <div>
-                                                <FontAwesomeIcon className='iconoHabilidades' icon={faGear} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda cuando se la necesite y tamb escuchar correciones.</p>
+                                                <p>Tengo un largo camino en mi carrera de programador pero cada dia avanzo ya sea con un curso nuevo o practicando con diferentes proyectos, disfrutando el camino del aprendizage.</p>
                                             </div>
                                         </article>
                                     </section>
@@ -512,7 +528,7 @@ const Header = () => {
                                 <div id='tecnologias' className="slider-view">
                                     <section className='contianer-tecnologias'>
                                         <h2>Tecnologias</h2>
-                                        <article className='tecnologias-dark'>
+                                        <article className='tecnologias-light'>
 
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon html' icon={faHtml5} />

@@ -32,7 +32,7 @@
     }
 }
 
-.header-light{
+.header-dark{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,14 +44,14 @@
     max-width: 50em;
 }
 
-.nav-light .ul-light{
+.nav-dark .ul-dark{
     display: flex;
     color: white;
     padding: 0px 0px 0px 0px;
     width: 100%;
 }
 
-.nav-light .ul-light a{
+.nav-dark .ul-dark a{
     text-decoration: none;
     margin: 1em;
     list-style: none;
@@ -63,7 +63,7 @@
 }
 
 
-.nav-light-selec{
+.nav-dark-selec{
     display: none;
 }
 
@@ -92,7 +92,8 @@ nav ul a:hover{
 
 /*--buttons-*/
 
-.container-buttons{
+.container-buttons,
+.BtonFlecha{
     position: fixed;
     z-index: 1;
     bottom: 50px;
@@ -103,22 +104,58 @@ nav ul a:hover{
 }
 
 
+.BtonFlecha{
+    display: none;
+}
+
+
+.BtonFlecha button{
+    padding: 1em 1em;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: rgb(112, 110, 110);
+    border-radius: 10px;
+}
+
 .container-buttons button,
 .container-buttons a    {
-    color: black;
     padding: .7em .9em;
     border-radius: 3em;
     margin: 0em 1em;
     cursor:pointer;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff13;
+    transition: all .5s;
+}
 
+
+.container-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+.container-buttons a:hover .iconoHeaderSun{
+    color: rgba(211, 132, 42, 0.959);
+}
+
+.iconoHeaderLinkedin {
+    border: none;
+    color:white;
+    outline: none;
+    font-size: 2em;
 }
 
 .iconoHeader{
     font-size: 2em;
+}
+
+
+.iconoHeaderSun{
+    font-size: 2em;
+    color: yellow;
 }
 
 
@@ -309,19 +346,19 @@ nav ul a:hover{
 
 
 
-.contianer-info .article-p-light{
+.contianer-info .article-p-dark{
     display: flex;
     justify-content: center;
     padding: 2em;
     align-items: start;
     flex-direction: column;
 }
-.contianer-info .article-p-light h2{
+.contianer-info .article-p-dark h2{
     color: white;
     position: relative;
 }
 
-.contianer-info .article-p-light h2::after{
+.contianer-info .article-p-dark h2::after{
     content: "";
     display: block;
     position: absolute;
@@ -329,7 +366,7 @@ nav ul a:hover{
     border: 1px solid white;
     margin-top: 2%;
 }
-.contianer-info .article-p-light p{
+.contianer-info .article-p-dark p{
     color: rgb(192, 191, 191);
     text-align: start;
     font-size: 1.4em;
@@ -422,7 +459,7 @@ nav ul a:hover{
 /*--Proyectos --*/
 
 .contianer-Proyectos,
-.contianer-Proyectos-light{
+.contianer-Proyectos-dark{
     display: flex;
     height: 100%;
     flex-flow: row wrap;
@@ -434,7 +471,7 @@ nav ul a:hover{
     overflow-y: auto;
 }
 .contianer-Proyectos div,
-.contianer-Proyectos-light div{
+.contianer-Proyectos-dark div{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -442,13 +479,13 @@ nav ul a:hover{
 }
 
 .contianer-Proyectos h2,
-.contianer-Proyectos-light h2{
+.contianer-Proyectos-dark h2{
     color: white;
     position: relative;
 }
 
 .contianer-Proyectos h2::after,
-.contianer-Proyectos-light h2::after{
+.contianer-Proyectos-dark h2::after{
     position: absolute;
     content: "";
     display: block;
@@ -564,7 +601,7 @@ nav ul a:hover{
     border: 1px solid rgb(233, 221, 221);
 }
 
-.habilidades-Light{
+.habilidades-dark{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -572,7 +609,7 @@ nav ul a:hover{
 }
 
 
-.habilidades-Light div{
+.habilidades-dark div{
     color: rgba(255, 255, 255, 0.692);
     display: flex;
     flex-direction: column;
@@ -586,7 +623,7 @@ nav ul a:hover{
 }
 
 
-.habilidades-Light div p{
+.habilidades-dark div p{
     text-align: center;
     font-size: 1.2em;
     padding: 0 1em;
