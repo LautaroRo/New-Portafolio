@@ -425,7 +425,7 @@ const Header = () => {
 
                     <>
                         <div className='container-buttons'>
-                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
+                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'className='iconoHeaderLinkedinButton'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
                             <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faMoon} /></a>
                         </div>
                         <div className='BtonFlecha'>
