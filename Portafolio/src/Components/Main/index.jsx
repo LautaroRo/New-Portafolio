@@ -8,7 +8,7 @@ import img2 from "./../../Assets/img2.jpeg"
 import img3 from "./../../Assets/img3.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope, faMoon, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope, faMoon, faArrowLeft, faDatabase } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2"
 
@@ -198,7 +198,7 @@ const Header = () => {
                                     <section className='contianer-info'>
                                         <article className='article-p-dark'>
                                             <h2>Sobre Mi</h2>
-                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Cuando haya perfeccionado mis habilidades en el Front End, comenzaré a trabajar en el Back End para convertirme en un programador Full Stack en el futuro.</p>
+                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro.</p>
 
                                         </article>
 
@@ -274,6 +274,10 @@ const Header = () => {
 
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon' icon={faReact} />
+                                            </div>
+
+                                            <div className='div'>
+                                            <FontAwesomeIcon className='icon' icon={faDatabase} />
                                             </div>
                                         </article>
                                     </section>
@@ -560,6 +564,10 @@ const Header = () => {
 
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon' icon={faReact} />
+                                            </div>
+
+                                            <div className='div'>
+                                            <FontAwesomeIcon className='icon' icon={faDatabase} />
                                             </div>
                                         </article>
                                     </section>
