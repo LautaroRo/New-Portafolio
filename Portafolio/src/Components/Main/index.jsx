@@ -3,6 +3,7 @@ import "./estilos.css"
 import "./estilos2.css"
 import "./Responsive.css"
 import foto from "./../../Assets/Foto2.jpeg"
+import tmdb from "./../../Assets/TMDB.jpeg"
 import img1 from "./../../Assets/img1.jpeg"
 import img2 from "./../../Assets/img2.jpeg"
 import img3 from "./../../Assets/img3.jpeg"
@@ -18,14 +19,14 @@ const Header = () => {
     const [isChecked, setIsChecked] = useState(false);
 
 
-    const cambiarEstado = (e) =>{
+    const cambiarEstado = (e) => {
         const query = document.querySelector(".activo")
         const queryDark = document.querySelector(".activo-dark")
         query?.classList?.remove("activo")
         queryDark?.classList?.remove("activo-dark")
         setEstado(!estado)
         const clase2 = document.querySelector(".container-buttons-flex")
-        if(clase2){
+        if (clase2) {
             clase2?.classList?.remove("container-buttons-flex")
             clase2?.classList?.add("container-buttons")
         }
@@ -34,11 +35,11 @@ const Header = () => {
     const cambiar = (e) => {
         const query = document.querySelector(".activo")
         const queryDark = document.querySelector(".activo-dark")
-        if(query){
+        if (query) {
             query?.classList?.remove("activo")
             e.target.classList?.add("activo")
         }
-        if(queryDark){
+        if (queryDark) {
             queryDark?.classList?.remove("activo-dark")
             e.target.classList?.add("activo-dark")
         }
@@ -53,13 +54,13 @@ const Header = () => {
         const clase = document.querySelector(".container-buttons")
         const clase2 = document.querySelector(".container-buttons-flex")
 
-        if(clase){
+        if (clase) {
             clase?.classList?.remove("container-buttons")
             clase?.classList?.add("container-buttons-flex")
-        }else if(clase2){
+        } else if (clase2) {
             clase2?.classList?.remove("container-buttons-flex")
             clase2?.classList?.add("container-buttons")
-        }else if(undefined){
+        } else if (undefined) {
             console.log("error")
         }
     }
@@ -89,34 +90,37 @@ const Header = () => {
         const input2 = document.getElementById("input2")
         const input3 = document.getElementById("input3")
         const input4 = document.getElementById("input4")
-        
-        if(input1.value.length > 2 || input3.value.length > 4 || input4.value.length > 5){
+
+        if (input1.value.length > 2 || input3.value.length > 4 || input4.value.length > 5) {
             emailjs.sendForm("service_6td7czh", "template_l7sg8cu", form.current, "zLduDFw1jxUYLdXlK")
-            
-            .then(()=>{
-                input1.value= ""
-                input2.value= ""
-                input3.value= ""
-                input4.value= ""
-    
-                Swal.fire({
-                    title:"Formulario Enviado",
-                    text:`Muchas gracias por comunicarte. En breve estaremos respondiendo`,
-                    icon:"success",
-                    background:"black",
-                    color:"white"
+
+                .then(() => {
+                    input1.value = ""
+                    input2.value = ""
+                    input3.value = ""
+                    input4.value = ""
+
+                    Swal.fire({
+                        title: "Formulario Enviado",
+                        text: `Muchas gracias por comunicarte. En breve estaremos respondiendo`,
+                        icon: "success",
+                        background: "black",
+                        color: "white"
+                    })
                 })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Profavor complete el formulario'
             })
-            }else{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Profavor complete el formulario'
-                })
-            }
         }
+    }
 
 
+    const handleDownload = () => {
+        window.open("https://drive.google.com/drive/folders/1gyU8LOwySlLhlUKkjgS5C01aeSwjbyXq?usp=sharing", '_blank');
+    };
 
 
     return (
@@ -141,7 +145,7 @@ const Header = () => {
                             <a href='#sobre' onClick={cambiarEstado}><FontAwesomeIcon className='iconoHeaderSun' icon={faSun} /></a>
                         </div>
                         <div className='BtonFlecha'>
-                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft}/></button>
+                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft} /></button>
                         </div>
 
                         <div className='Container-header'>
@@ -198,7 +202,7 @@ const Header = () => {
                                     <section className='contianer-info'>
                                         <article className='article-p-dark'>
                                             <h2>Sobre Mi</h2>
-                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro.</p>
+                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro  <button className='cv' onClick={handleDownload}>CV</button></p>
 
                                         </article>
 
@@ -277,7 +281,7 @@ const Header = () => {
                                             </div>
 
                                             <div className='div'>
-                                            <FontAwesomeIcon className='icon' icon={faDatabase} />
+                                                <FontAwesomeIcon className='icon' icon={faDatabase} />
                                             </div>
                                         </article>
                                     </section>
@@ -320,7 +324,7 @@ const Header = () => {
                                                 <div className='divSpan'>
                                                     <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/Calculadora.git'>GitHub</a></span>
                                                 </div>
-                                                
+
 
                                             </article>
 
@@ -331,7 +335,7 @@ const Header = () => {
                                                     <h2>Poke Api</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo no solo acceder a información detallada sobre los Pokémon y sus estadísticas, sino también brindando funcionalidades adicionales como la capacidad de filtrarlos por especies y mucho más.</p>
+                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo acceder a información detallada sobre los Pokémon y sus estadísticas.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -340,7 +344,23 @@ const Header = () => {
 
                                             </article>
 
-                                            
+                                            <article className='article'>
+
+                                                <a href="https://tmdb-api-kappa.vercel.app/" target='_blank'><img className='img' src={tmdb} /></a>
+                                                <div className='posicionh2'>
+                                                    <h2>TMDB Api</h2>
+                                                </div>
+                                                <div className='posicionp'>
+                                                    <p>Este proyecto tiene como objetivo explotar mis conocimientos con un muy buen desafio que seria intentar imitar una plataforma de streaming como lo es Netflix.</p>
+                                                </div>
+
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/TMDB-API.git'>GitHub</a></span>
+                                                </div>
+
+                                            </article>
+
+
                                         </div>
                                     </section>
                                 </div>
@@ -429,11 +449,11 @@ const Header = () => {
 
                     <>
                         <div className='container-buttons'>
-                            <a  href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'className='iconoHeaderLinkedinButton'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
+                            <a className="IconoLink" href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
                             <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faMoon} /></a>
                         </div>
                         <div className='BtonFlecha'>
-                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft}/></button>
+                            <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft} /></button>
                         </div>
                         <div className='Container-header-light'>
 
@@ -488,7 +508,7 @@ const Header = () => {
                                     <section className='contianer-info'>
                                         <article className='article-p-dark'>
                                             <h2>Sobre Mi</h2>
-                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Cuando haya perfeccionado mis habilidades en el Front End, comenzaré a trabajar en el Back End para convertirme en un programador Full Stack en el futuro.</p>
+                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro  <button className='cv' onClick={handleDownload}>CV</button></p>
 
                                         </article>
 
@@ -567,7 +587,7 @@ const Header = () => {
                                             </div>
 
                                             <div className='div'>
-                                            <FontAwesomeIcon className='icon' icon={faDatabase} />
+                                                <FontAwesomeIcon className='icon' icon={faDatabase} />
                                             </div>
                                         </article>
                                     </section>
@@ -626,6 +646,22 @@ const Header = () => {
 
                                                 <div className='divSpan'>
                                                     <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/PokeAPI.git'>GitHub</a></span>
+                                                </div>
+
+                                            </article>
+
+                                            <article className='article-light'>
+
+                                                <a href="https://tmdb-api-kappa.vercel.app/" target='_blank'><img className='img' src={tmdb} /></a>
+                                                <div className='posicionh2'>
+                                                    <h2>TMDB Api</h2>
+                                                </div>
+                                                <div className='posicionp'>
+                                                    <p>Este proyecto tiene como objetivo explotar mis conocimientos con un muy buen desafio que seria intentar imitar una plataforma de streaming como lo es Netflix.</p>
+                                                </div>
+
+                                                <div className='divSpan'>
+                                                    <span>HTML, CSS, React</span>  <span className='spanGit'><a target='_blank' href='https://github.com/LautaroRo/TMDB-API.git'>GitHub</a></span>
                                                 </div>
 
                                             </article>

@@ -84,7 +84,7 @@
 .contianer-info .article-p-dark p{
     color: rgb(192, 191, 191);
     text-align: start;
-    font-size: 1.4em;
+    font-size: 1.3em;
     letter-spacing: .2em;
 }
 
@@ -179,8 +179,8 @@
     background-color: rgba(227, 227, 235, 0.103);
     color: rgb(248, 244, 244);
     width: 30%;
-    margin: 2em;
     border-radius: 20px 20px 0px 0px;
+    margin: 5em 2em;
 }
 
 

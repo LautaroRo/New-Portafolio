@@ -1,8 +1,8 @@
 /*--Header--*/
 
-.Container-header{
-    background:linear-gradient(rgba(0,0,0, 0.30) 0%, rgba(0,0,0, 0.50) 100%),url("./../../Assets//foto.gif");
-    height: 100vh; 
+.Container-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.50) 100%), url("./../../Assets//foto.gif");
+    height: 100vh;
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -16,23 +16,25 @@
     flex-direction: column;
 }
 
-@keyframes inicio{
-    0%{
-        opacity: -1;
-    }
-    50%{
+@keyframes inicio {
+    0% {
         opacity: -1;
     }
 
-    75%{
+    50% {
         opacity: -1;
     }
-    100%{
+
+    75% {
+        opacity: -1;
+    }
+
+    100% {
         opacity: 1;
     }
 }
 
-.header-dark{
+.header-dark {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,14 +46,14 @@
     max-width: 50em;
 }
 
-.nav-dark .ul-dark{
+.nav-dark .ul-dark {
     display: flex;
     color: white;
     padding: 0px 0px 0px 0px;
     width: 100%;
 }
 
-.nav-dark .ul-dark a{
+.nav-dark .ul-dark a {
     text-decoration: none;
     margin: 1em;
     list-style: none;
@@ -63,22 +65,22 @@
 }
 
 
-.nav-dark-selec{
+.nav-dark-selec {
     display: none;
 }
 
-.close-ul{
+.close-ul {
     display: none;
 }
 
-nav ul a:hover{
+nav ul a:hover {
     background-color: rgba(0, 0, 0, 0.219);
     border-radius: 10px;
 }
 
 
 
-.activo{
+.activo {
     background-color: rgba(0, 0, 0, 0.219);
     border-radius: 10px;
     padding: .8em .9em;
@@ -93,7 +95,7 @@ nav ul a:hover{
 /*--buttons-*/
 
 .container-buttons,
-.BtonFlecha{
+.BtonFlecha {
     position: fixed;
     z-index: 1;
     bottom: 50px;
@@ -103,13 +105,25 @@ nav ul a:hover{
     animation: main 5s linear;
 }
 
-
-.BtonFlecha{
+.cv {
+    padding: .5em 1.5em;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.253);
+    outline: none;
+    transition: all .5s;
+    cursor: pointer;
+}
+.cv:hover{
+    background-color: rgba(128, 128, 128, 0.726);
+}
+.BtonFlecha {
     display: none;
 }
 
 
-.BtonFlecha button{
+.BtonFlecha button {
     padding: 1em 1em;
     color: white;
     outline: none;
@@ -119,11 +133,11 @@ nav ul a:hover{
 }
 
 .container-buttons button,
-.container-buttons a    {
+.container-buttons a {
     padding: .7em .9em;
     border-radius: 3em;
     margin: 0em 1em;
-    cursor:pointer;
+    cursor: pointer;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -137,30 +151,30 @@ nav ul a:hover{
     background-color: rgba(255, 255, 255, 0.822);
 }
 
-.container-buttons a:hover .iconoHeaderSun{
+.container-buttons a:hover .iconoHeaderSun {
     color: rgba(211, 132, 42, 0.959);
 }
 
 .iconoHeaderLinkedin {
     border: none;
-    color:white;
+    color: white;
     outline: none;
     font-size: 2em;
 }
 
-.iconoHeader{
+.iconoHeader {
     font-size: 2em;
 }
 
 
-.iconoHeaderSun{
+.iconoHeaderSun {
     font-size: 2em;
     color: yellow;
 }
 
 
 /*--Animacion--*/
-.descr{
+.descr {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,32 +190,35 @@ nav ul a:hover{
 
 }
 
-@keyframes descr{
-    0%{
+@keyframes descr {
+    0% {
         right: 0;
         opacity: -1;
         filter: blur(0px);
         left: -100px;
     }
-    50%{
+
+    50% {
         opacity: 1;
         filter: blur(0px);
         left: 0px;
         right: 0;
     }
-    75%{
+
+    75% {
         opacity: 1;
         filter: blur(5px);
         left: 0px;
         right: 0;
     }
-    100%{
+
+    100% {
         opacity: -1;
         right: 0;
     }
 }
 
-.Mi{
+.Mi {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,7 +228,7 @@ nav ul a:hover{
 }
 
 
-.Mi h2{
+.Mi h2 {
     animation: container ease 4s;
     animation-iteration-count: 1;
     font-size: 3em;
@@ -220,63 +237,68 @@ nav ul a:hover{
 }
 
 .Mi h2::after,
-.Mi h3::after
-{
+.Mi h3::after {
     content: "";
     width: 100%;
     position: absolute;
     border: 1px solid white;
     display: block;
     animation: after 5s ease;
-    
+
 }
 
-@keyframes after{
-    0%{
+@keyframes after {
+    0% {
         width: 0%;
     }
-    100%{
+
+    100% {
         width: 100%;
     }
 }
 
-.Mi h3{
+.Mi h3 {
     animation: container ease 3s;
     animation-iteration-count: 1;
     font-size: 2em;
     position: relative;
 }
-@keyframes container{
-    from{
+
+@keyframes container {
+    from {
         transform: translatex(-700px);
     }
-    to{
+
+    to {
         transform: translateX(0px);
     }
 }
-@media screen and (max-width:1400px){
-    .container-Mi{
+
+@media screen and (max-width:1400px) {
+    .container-Mi {
         height: 50%;
     }
 }
-@media screen and (max-width:470px){
-    .container-Mi h2{
+
+@media screen and (max-width:470px) {
+    .container-Mi h2 {
         font-size: 2em;
     }
 
-    .container-Mi h3{
+    .container-Mi h3 {
         font-size: 1.5em;
     }
 }
 
 
-.container-Pres{
+.container-Pres {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.container-Pres p{
+
+.container-Pres p {
     display: flex;
     color: rgba(255, 255, 255, 0.63);
     text-align: center;
@@ -289,10 +311,10 @@ nav ul a:hover{
 /*---*/
 
 
-.container-all{
+.container-all {
     scroll-behavior: smooth;
     max-width: 100em;
-    max-height: 40em;
+    max-height: 42em;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -306,24 +328,27 @@ nav ul a:hover{
     animation-delay: 4s;
 }
 
-@keyframes main{
-    0%{
+@keyframes main {
+    0% {
         opacity: -1;
     }
-    50%{
+
+    50% {
         opacity: -1;
     }
-    75%{
+
+    75% {
         opacity: -1;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
 
 
-.slider-view{
+.slider-view {
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -333,7 +358,7 @@ nav ul a:hover{
 }
 
 
-.contianer-info{
+.contianer-info {
     display: grid;
     grid-template-columns: 40% 55%;
     width: 100em;
@@ -347,19 +372,20 @@ nav ul a:hover{
 
 
 
-.contianer-info .article-p-dark{
+.contianer-info .article-p-dark {
     display: flex;
     justify-content: center;
     padding: 2em;
     align-items: start;
     flex-direction: column;
 }
-.contianer-info .article-p-dark h2{
+
+.contianer-info .article-p-dark h2 {
     color: white;
     position: relative;
 }
 
-.contianer-info .article-p-dark h2::after{
+.contianer-info .article-p-dark h2::after {
     content: "";
     display: block;
     position: absolute;
@@ -367,21 +393,22 @@ nav ul a:hover{
     border: 1px solid white;
     margin-top: 2%;
 }
-.contianer-info .article-p-dark p{
+
+.contianer-info .article-p-dark p {
     color: rgb(192, 191, 191);
     text-align: start;
-    font-size: 1.4em;
+    font-size: 1.3em;
     letter-spacing: .2em;
 }
 
 
-.article-img{
+.article-img {
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
-.contianer-info article img{
+.contianer-info article img {
     height: 330px;
     width: 70%;
     background-size: cover;
@@ -395,7 +422,7 @@ nav ul a:hover{
 
 /*--Tecnologias-*/
 
-.contianer-tecnologias{
+.contianer-tecnologias {
     width: 100em;
     display: flex;
     justify-content: center;
@@ -404,13 +431,14 @@ nav ul a:hover{
     height: 100%;
     margin-bottom: 3%;
 }
-.contianer-tecnologias h2{
+
+.contianer-tecnologias h2 {
     color: rgb(233, 221, 221);
     position: relative;
 }
 
 
-.contianer-tecnologias h2::after{
+.contianer-tecnologias h2::after {
     content: "";
     position: absolute;
     display: block;
@@ -418,7 +446,7 @@ nav ul a:hover{
     border: 1px solid rgb(233, 221, 221);
 }
 
-.tecnologias{
+.tecnologias {
     display: flex;
     overflow-y: auto;
     flex-flow: row wrap;
@@ -426,8 +454,8 @@ nav ul a:hover{
     justify-content: center;
 }
 
-.tecnologias .div{
-    background:radial-gradient(100.86% 90% at 50% 0%,rgba(2, 26, 78, 0.968) 0%,rgb(17, 6, 80) 100%);
+.tecnologias .div {
+    background: radial-gradient(100.86% 90% at 50% 0%, rgba(2, 26, 78, 0.968) 0%, rgb(17, 6, 80) 100%);
     margin: 1em 2em;
     border-radius: 10px;
     width: 280px;
@@ -440,7 +468,7 @@ nav ul a:hover{
 
 
 
-.icon{
+.icon {
     height: 40%;
     width: 40%;
     color: white;
@@ -448,7 +476,7 @@ nav ul a:hover{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding:5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 
@@ -460,7 +488,7 @@ nav ul a:hover{
 /*--Proyectos --*/
 
 .contianer-Proyectos,
-.contianer-Proyectos-dark{
+.contianer-Proyectos-dark {
     display: flex;
     height: 100%;
     flex-flow: row wrap;
@@ -471,48 +499,50 @@ nav ul a:hover{
     margin-bottom: 3%;
     overflow-y: auto;
 }
+
 .contianer-Proyectos div,
-.contianer-Proyectos-dark div{
+.contianer-Proyectos-dark div {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .contianer-Proyectos h2,
-.contianer-Proyectos-dark h2{
+.contianer-Proyectos-dark h2 {
     color: white;
     position: relative;
 }
 
 .contianer-Proyectos h2::after,
-.contianer-Proyectos-dark h2::after{
+.contianer-Proyectos-dark h2::after {
     position: absolute;
     content: "";
     display: block;
     width: 100%;
     border: 1px solid white;
 }
-.article{
+
+.article {
     display: flex;
     flex-direction: column;
     align-items: start;
     background-color: rgba(0, 0, 5, 0.582);
     color: white;
     width: 30%;
-    margin: 2em;
+    margin: 5em 2em;
     border-radius: 20px 20px 0px 0px;
 }
 
 
 
-.article a{
+.article a {
     height: 100%;
     width: 100%;
 }
 
 .article .img,
-.article-light .img{
+.article-light .img {
     width: 100%;
     border-radius: 20px 20px 0px 0px;
     height: 100%;
@@ -520,51 +550,54 @@ nav ul a:hover{
 }
 
 .article a:hover .img,
-.article-light a:hover .img{
+.article-light a:hover .img {
     transform: scale(1.1);
     border-radius: 20px 20px 20px 20px;
 }
 
-.divSpan{
+.divSpan {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
 
-.divSpan .spanGit{
+.divSpan .spanGit {
     cursor: pointer;
     transition: all .5s;
 }
 
-.spanGit a{
+.spanGit a {
     text-decoration: none;
     color: white;
 }
-.divSpan .spanGit:hover{
+
+.divSpan .spanGit:hover {
     transform: scale(1.5);
 }
-.article .posicionh2{
+
+.article .posicionh2 {
     display: flex;
     justify-content: start;
     margin: 0 2em;
 }
-.article .posicionp{
+
+.article .posicionp {
     display: flex;
     justify-content: start;
     position: relative;
-    bottom: 20px;   
+    bottom: 20px;
     width: 80%;
     margin-left: 10%;
 }
 
-.article p{
+.article p {
     letter-spacing: 1px;
     width: 100%;
 }
 
 
-.article span{
+.article span {
     position: relative;
     bottom: 10px;
     margin: 0 2em;
@@ -578,7 +611,7 @@ nav ul a:hover{
 /*--habilidades--*/
 
 
-.contianer-habilidades{
+.contianer-habilidades {
     display: flex;
     align-items: center;
     height: 100%;
@@ -588,13 +621,13 @@ nav ul a:hover{
     flex-direction: column;
 }
 
-.contianer-habilidades h2{
+.contianer-habilidades h2 {
     color: rgb(233, 221, 221);
     position: relative;
 }
 
 
-.contianer-habilidades h2::after{
+.contianer-habilidades h2::after {
     content: "";
     position: absolute;
     display: block;
@@ -602,7 +635,7 @@ nav ul a:hover{
     border: 1px solid rgb(233, 221, 221);
 }
 
-.habilidades-dark{
+.habilidades-dark {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -610,7 +643,7 @@ nav ul a:hover{
 }
 
 
-.habilidades-dark div{
+.habilidades-dark div {
     color: rgba(255, 255, 255, 0.692);
     display: flex;
     flex-direction: column;
@@ -619,19 +652,19 @@ nav ul a:hover{
     width: 26em;
     height: 13em;
     border-radius: 10px;
-    background:radial-gradient(100.86% 90% at 50% 0%,rgba(2, 26, 78, 0.968) 0%,rgb(5, 1, 29) 100%);
+    background: radial-gradient(100.86% 90% at 50% 0%, rgba(2, 26, 78, 0.968) 0%, rgb(5, 1, 29) 100%);
     margin: 1em 2em;
 }
 
 
-.habilidades-dark div p{
+.habilidades-dark div p {
     text-align: center;
     font-size: 1.2em;
     padding: 0 1em;
 }
 
 
-.iconoHabilidades{
+.iconoHabilidades {
     position: relative;
 
 }
@@ -643,7 +676,7 @@ nav ul a:hover{
 /*--Contacto-*/
 
 .contianer-contacto,
-.contianer-contacto-light{
+.contianer-contacto-light {
     display: flex;
     height: 100%;
     width: 100em;
@@ -656,14 +689,14 @@ nav ul a:hover{
 }
 
 .contianer-contacto div .h2,
-.contianer-contacto-light div .h2{
+.contianer-contacto-light div .h2 {
     color: white;
     position: relative
 }
 
 
 .contianer-contacto div .h2::after,
-.contianer-contacto-light div .h2::after{
+.contianer-contacto-light div .h2::after {
     position: absolute;
     content: "";
     display: block;
@@ -672,7 +705,7 @@ nav ul a:hover{
 }
 
 
-.formulario{
+.formulario {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -681,8 +714,8 @@ nav ul a:hover{
     margin-bottom: 10%;
 }
 
-.content{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.content {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
@@ -690,26 +723,26 @@ nav ul a:hover{
 }
 
 
-.contact-wrapper > *{
+.contact-wrapper>* {
     padding: 1em;
 }
 
-.contact-form-dark{
+.contact-form-dark {
     background: #05207ab9;
 }
 
-.contact-form-dark p{
+.contact-form-dark p {
     margin: 0;
     padding: 1em;
 }
 
-.contact-form-dark form{
+.contact-form-dark form {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 
-.contact-form-dark form .block{
+.contact-form-dark form .block {
     grid-column: 1/3;
 }
 
@@ -717,7 +750,7 @@ nav ul a:hover{
 
 .contact-form-dark form button,
 .contact-form-dark form input,
-.contact-form-dark form textarea{
+.contact-form-dark form textarea {
     width: 100%;
     padding: .7em;
     border: none;
@@ -727,7 +760,7 @@ nav ul a:hover{
     color: #fff;
 }
 
-.contact-form-dark form button{
+.contact-form-dark form button {
     background: #ebdee0ad;
     border: none;
     text-transform: uppercase;
@@ -736,14 +769,14 @@ nav ul a:hover{
     cursor: pointer;
 }
 
-.contact-form-dark form button:hover{
+.contact-form-dark form button:hover {
     background: #160404b0;
     color: #fff;
     transition: background-color 1s ease-out;
     outline: 0;
 }
 
-.contact-info-dark{
+.contact-info-dark {
     background: #024458d2;
     color: #fff;
 }
@@ -751,28 +784,28 @@ nav ul a:hover{
 
 .contact-info h4,
 .contact-info .ul,
-.contact-info p{
+.contact-info p {
     text-align: center;
     margin: 0 0 1em 0;
 }
 
-.contact-info-dark .ul{
+.contact-info-dark .ul {
     list-style: none;
     padding: 0;
 }
 
-.contact-info-dark .ul li{
+.contact-info-dark .ul li {
     padding: .3em;
 }
 
-form p label{
+form p label {
     color: white;
     position: relative;
 }
 
 
 
-form p label::after{
+form p label::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -782,7 +815,6 @@ form p label::after{
 }
 
 
-.iconoHeaderLinkedin:hover{
+.container-buttons a:hover .iconoHeaderLinkedin{
     color: black;
 }
-
