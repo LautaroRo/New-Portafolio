@@ -44,8 +44,18 @@
     transition: all .5s;
     color: black;
     padding: 1em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#moon{
+    color: white;
 }
 
+
+.container-buttons a:hover #moon{
+    color: black;
+}
 .activo-dark{
         background-color: rgba(245, 237, 237, 0.493);
         border-radius: 10px;

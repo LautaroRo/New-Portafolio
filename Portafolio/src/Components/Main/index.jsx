@@ -14,7 +14,7 @@ import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2"
 
 const Header = () => {
-    const [selectedOption, setSelectedOption] = useState('sobre');
+    const [selectedOption, setSelectedOption] = useState('About Me');
     const [estado, setEstado] = useState(false)
     const [isChecked, setIsChecked] = useState(false);
 
@@ -43,6 +43,9 @@ const Header = () => {
             queryDark?.classList?.remove("activo-dark")
             e.target.classList?.add("activo-dark")
         }
+        const a = e.target.getAttribute('value')
+        console.log(a)
+        setSelectedOption(a)
 
     }
 
@@ -129,7 +132,7 @@ const Header = () => {
             <div className='descr'>
                 <div className='Mi'>
                     <h2>Lautaro Rodriguez</h2>
-                    <h3>Desarrollador front end</h3>
+                    <h3>Frontend Developer</h3>
 
                 </div>
             </div>
@@ -156,11 +159,11 @@ const Header = () => {
                             <header className='header-dark'>
                                 <nav className='nav-dark'>
                                     <ul className='ul-dark'>
-                                        <a onClick={cambiar} href='#sobre' className='activo'>Sobre Mi</a>
-                                        <a href='#habilidades' onClick={cambiar}>Habilidades</a>
-                                        <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
-                                        <a onClick={cambiar} href='#proyectos'>Proyectos</a>
-                                        <a onClick={cambiar} href='#contacto'>Contacto</a>
+                                        <a value="About Me" onClick={cambiar} href='#sobre' className='activo'>About Me</a>
+                                        <a value="Skills" onClick={cambiar} href='#habilidades'>Skills</a>
+                                        <a value="Technologies" onClick={cambiar} href='#tecnologias'>Technologies</a>
+                                        <a value="proyects" onClick={cambiar} href='#proyectos'>Proyects</a>
+                                        <a value="contact" onClick={cambiar} href='#contacto'>Contact</a>
                                     </ul>
                                 </nav>
 
@@ -170,23 +173,23 @@ const Header = () => {
 
                                     <ul className='ulSelect'>
                                         <li>
-                                            <a value="sobre" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>Sobre Mi</a>
+                                            <a value="About Me" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>About Me</a>
                                         </li>
 
                                         <li>
-                                            <a value="habilidades" href="#habilidades" onClick={handleCheckboxClick} className=''>Habilidades</a>
+                                            <a value="Skills" href="#habilidades" onClick={handleCheckboxClick} className=''>Skills</a>
                                         </li>
 
                                         <li>
-                                            <a value="tecnologias" href="#tecnologias" onClick={handleCheckboxClick} className=''>Tecnologias</a>
+                                            <a value="Technologies" href="#tecnologias" onClick={handleCheckboxClick} className=''>Technologies</a>
                                         </li>
 
                                         <li>
-                                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                                            <a value="proyects" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyects</a>
                                         </li>
 
                                         <li>
-                                            <a value="contacto" href="#contacto" onClick={handleCheckboxClick} className=''>Contacto</a>
+                                            <a value="contact" href="#contacto" onClick={handleCheckboxClick} className=''>Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -201,8 +204,8 @@ const Header = () => {
                                 <div id='sobre' className="slider-view">
                                     <section className='contianer-info'>
                                         <article className='article-p-dark'>
-                                            <h2>Sobre Mi</h2>
-                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro  <button className='cv' onClick={handleDownload}>CV</button></p>
+                                            <h2>About Me</h2>
+                                            <p>Hello, let me introduce myself. My name is Lautaro Rodriguez, and I am a Junior React Developer. I am passionate about programming, both in the Back End and Front End. Currently, I am a Frontend developer with many capabilities and skills; therefore, I have started studying Backend programming to become a Full Stack developer in the future.<button className='cv' onClick={handleDownload}>CV</button></p>
 
                                         </article>
 
@@ -217,26 +220,26 @@ const Header = () => {
 
                                 <div id='habilidades' className="slider-view">
                                     <section className='contianer-habilidades'>
-                                        <h2>Habilidades</h2>
+                                        <h2>Skills</h2>
                                         <article className='habilidades-dark'>
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda y tambien escuchar correciones para poder aprender.</p>
+                                                <p>I have the ability to work effectively in a team, and I am willing and passionate about offering my assistance while also being open to receiving corrections as a means of learning.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faLightbulb} />
-                                                <p>Soy una persona con mucha creatividad en la que me ayuda a poder encontrar soluciones a diferentes problemas, ya que hay diferentes soluciones para cada problema.</p>
+                                                <p>I am a highly creative individual, and this creativity aids me in finding solutions to various problems. I believe there are multiple solutions to every problem.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faCode} />
-                                                <p>Me encanta la programacion por lo cual puedo estar horas sentado en mi silla programando sin notar que es una carga sino como algo divertido, ya que al practicar al mismo tiempo aprendo.</p>
+                                                <p>I love programming, which allows me to sit for hours coding without feeling it as a burden but rather as something enjoyable. Practicing simultaneously becomes a learning experience for me.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faArrowTrendUp} />
-                                                <p>Tengo un largo camino en mi carrera de programador pero cada dia avanzo ya sea con un curso nuevo o practicando con diferentes proyectos, disfrutando el camino del aprendizage. </p>
+                                                <p>I have a long journey in my programming career, but every day I progress, whether it's through a new course or practicing with different projects. I enjoy the learning journey. </p>
                                             </div>
                                         </article>
                                     </section>
@@ -246,7 +249,7 @@ const Header = () => {
                                 {/*--Tecnologias-*/}
                                 <div id='tecnologias' className="slider-view">
                                     <section className='contianer-tecnologias'>
-                                        <h2>Tecnologias</h2>
+                                        <h2>Technologies</h2>
                                         <article className='tecnologias'>
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon html' icon={faHtml5} />
@@ -293,7 +296,7 @@ const Header = () => {
                                 <div id='proyectos' className="slider-view">
                                     <section className='contianer-Proyectos-dark'>
                                         <div>
-                                            <h2>Proyectos</h2>
+                                            <h2>Proyects</h2>
                                         </div>
                                         <div>
                                             <article className='article'>
@@ -302,7 +305,7 @@ const Header = () => {
                                                     <h2>E-commerce</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta.</p>
+                                                    <p>An e-commerce platform for cars with storage implemented within the localStorage, featuring various cars available for sale.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -315,10 +318,10 @@ const Header = () => {
 
                                                 <a href="https://calculadora-three-brown.vercel.app/" target='_blank'><img className='img' src={img2} /></a>
                                                 <div className='posicionh2'>
-                                                    <h2>Calculadora</h2>
+                                                    <h2>Calculator</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Calculadora totalmente funcional, con la que podras hacer cualquier operacion matematica sin problemas.</p>
+                                                    <p>Fully functional calculator that allows you to perform any mathematical operation seamlessly.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -335,7 +338,7 @@ const Header = () => {
                                                     <h2>Poke Api</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo acceder a información detallada sobre los Pokémon y sus estadísticas.</p>
+                                                    <p>This project aims to make the most of the Poke API, allowing access to detailed information about Pokémon and their statistics.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -351,7 +354,7 @@ const Header = () => {
                                                     <h2>TMDB Api</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Este proyecto tiene como objetivo explotar mis conocimientos con un muy buen desafio que seria intentar imitar una plataforma de streaming como lo es Netflix.</p>
+                                                    <p>This project aims to leverage my skills with a significant challenge, attempting to mimic a streaming platform such as Netflix.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -370,7 +373,7 @@ const Header = () => {
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto'>
                                         <div>
-                                            <h2 className='h2'>Contacto</h2>
+                                            <h2 className='h2'>Contact</h2>
                                         </div>
                                         <article>
                                             <div className="content">
@@ -378,7 +381,7 @@ const Header = () => {
                                                     <div className="contact-form-dark">
                                                         <form ref={form} onSubmit={sendEmail}>
                                                             <p>
-                                                                <label>Nombre</label>
+                                                                <label>Name</label>
                                                                 <input type="text" name='user_name' id="input1" />
                                                             </p>
 
@@ -388,23 +391,23 @@ const Header = () => {
                                                             </p>
 
                                                             <p>
-                                                                <label>Motivo</label>
+                                                                <label>Reason</label>
                                                                 <input type="text" name="message" id="input3" />
                                                             </p>
 
                                                             <p className='block'>
-                                                                <label>Mensaje</label>
+                                                                <label>Message</label>
                                                                 <textarea name="message" id="input4" rows="3"></textarea>
                                                             </p>
                                                             <p className='block'>
                                                                 <button type="submit" value="Send">
-                                                                    Enviar
+                                                                    Send
                                                                 </button>
                                                             </p>
                                                         </form>
                                                     </div>
                                                     <div className="contact-info-dark">
-                                                        <h2>Mas Info</h2>
+                                                        <h2>More Info</h2>
                                                         <ul className='ul'>
                                                             <li>
                                                                 <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>Cordoba Argentina
@@ -417,7 +420,7 @@ const Header = () => {
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            React developer junior sin experiencia laboral, con muchas ganas de aprender y trabajar.
+                                                            Junior React developer with no professional experience, eager to learn and work.
                                                         </p>
 
                                                         <p>
@@ -450,7 +453,7 @@ const Header = () => {
                     <>
                         <div className='container-buttons'>
                             <a className="IconoLink" href='https://www.linkedin.com/in/lautaro-rodriguez-o-valle-501a55263/' target='_blank'><FontAwesomeIcon className='iconoHeaderLinkedin' icon={faLinkedin} /></a>
-                            <a href='#sobre'><FontAwesomeIcon onClick={cambiarEstado} className='iconoHeader' icon={faMoon} /></a>
+                            <a href='#sobre' onClick={cambiarEstado}><FontAwesomeIcon className='iconoHeader' id='moon' icon={faMoon} /></a>
                         </div>
                         <div className='BtonFlecha'>
                             <button onClick={MostarButtons}><FontAwesomeIcon icon={faArrowLeft} /></button>
@@ -463,11 +466,11 @@ const Header = () => {
                             <header className='header-light'>
                                 <nav className='nav-light'>
                                     <ul className='ul-light'>
-                                        <a onClick={cambiar} href='#sobre' className="activo-dark">Sobre Mi</a>
-                                        <a href='#habilidades' onClick={cambiar}>Habilidades</a>
-                                        <a onClick={cambiar} href='#tecnologias'>Tecnologias</a>
-                                        <a onClick={cambiar} href='#proyectos'>Proyectos</a>
-                                        <a onClick={cambiar} href='#contacto'>Contacto</a>
+                                        <a value="About Me" onClick={cambiar} href='#sobre' className="activo-dark">About Me</a>
+                                        <a value="Skills" onClick={cambiar} href='#habilidades'>Skills</a>
+                                        <a value="Technologies" onClick={cambiar} href='#tecnologias'>Technologies</a>
+                                        <a value="proyects" onClick={cambiar} href='#proyectos'>Proyects</a>
+                                        <a value="contact" onClick={cambiar} href='#contacto'>Contact</a>
                                     </ul>
                                 </nav>
                                 <nav className='nav-dark-selec'>
@@ -476,23 +479,23 @@ const Header = () => {
 
                                     <ul className='ulSelect'>
                                         <li>
-                                            <a value="sobre" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>Sobre Mi</a>
+                                            <a value="About Me" href='#sobre' onClick={handleCheckboxClick} className='activo-ul'>About Me</a>
                                         </li>
 
                                         <li>
-                                            <a value="habilidades" href="#habilidades" onClick={handleCheckboxClick} className=''>Habilidades</a>
+                                            <a value="Skills" href="#habilidades" onClick={handleCheckboxClick} className=''>Skills</a>
                                         </li>
 
                                         <li>
-                                            <a value="tecnologias" href="#tecnologias" onClick={handleCheckboxClick} className=''>Tecnologias</a>
+                                            <a value="Technologies" href="#tecnologias" onClick={handleCheckboxClick} className=''>Technologies</a>
                                         </li>
 
                                         <li>
-                                            <a value="proyectos" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyectos</a>
+                                            <a value="proyects" href="#proyectos" onClick={handleCheckboxClick} className=''>Proyects</a>
                                         </li>
 
                                         <li>
-                                            <a value="contacto" href='#contacto' onClick={handleCheckboxClick}>Contacto</a>
+                                            <a value="contact" href='#contacto' onClick={handleCheckboxClick} className=''>Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -507,8 +510,8 @@ const Header = () => {
                                 <div id='sobre' className="slider-view">
                                     <section className='contianer-info'>
                                         <article className='article-p-dark'>
-                                            <h2>Sobre Mi</h2>
-                                            <p>Hola, me presento. Mi nombre es Lautaro Rodriguez y soy un Desarrollador Junior en React. Me apasiona la programación, tanto en el Back End como en el Front End. Ahora soy un desarrollador Frontend con muchas capacidades y habiladades por lo tanto comence a estudiar programacion Backend para convertirme en un programador Full Stack en el futuro  <button className='cv' onClick={handleDownload}>CV</button></p>
+                                            <h2>About Me</h2>
+                                            <p>Hello, let me introduce myself. My name is Lautaro Rodriguez, and I am a Junior React Developer. I am passionate about programming, both in the Back End and Front End. Currently, I am a Frontend developer with many capabilities and skills; therefore, I have started studying Backend programming to become a Full Stack developer in the future.<button className='cv' onClick={handleDownload}>CV</button></p>
 
                                         </article>
 
@@ -523,26 +526,26 @@ const Header = () => {
 
                                 <div id='habilidades' className="slider-view">
                                     <section className='contianer-habilidades'>
-                                        <h2>Habilidades</h2>
+                                        <h2>Skills</h2>
                                         <article className='habilidades-light'>
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faPeopleGroup} />
-                                                <p>Tengo la capacidad de trabajar en grupo de manera optima, tengo la voluntad y la pasion para poder brindar mi ayuda y tambien escuchar correciones para poder aprender.</p>
+                                                <p>I have the ability to work effectively in a team, and I am willing and passionate about offering my assistance while also being open to receiving corrections as a means of learning.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faLightbulb} />
-                                                <p>Soy una persona con mucha creatividad en la que me ayuda a poder encontrar soluciones a diferentes problemas, ya que hay diferentes soluciones para cada problema.</p>
+                                                <p>I am a highly creative individual, and this creativity aids me in finding solutions to various problems. I believe there are multiple solutions to every problem.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faCode} />
-                                                <p>Me encanta la programacion por lo cual puedo estar horas sentado en mi silla programando sin notar que es una carga sino como algo divertido, ya que al practicar al mismo tiempo aprendo.</p>
+                                                <p>I love programming, which allows me to sit for hours coding without feeling it as a burden but rather as something enjoyable. Practicing simultaneously becomes a learning experience for me.</p>
                                             </div>
 
                                             <div>
                                                 <FontAwesomeIcon className='iconoHabilidades' icon={faArrowTrendUp} />
-                                                <p>Tengo un largo camino en mi carrera de programador pero cada dia avanzo ya sea con un curso nuevo o practicando con diferentes proyectos, disfrutando el camino del aprendizage.</p>
+                                                <p>I have a long journey in my programming career, but every day I progress, whether it's through a new course or practicing with different projects. I enjoy the learning journey.</p>
                                             </div>
                                         </article>
                                     </section>
@@ -551,7 +554,7 @@ const Header = () => {
 
                                 <div id='tecnologias' className="slider-view">
                                     <section className='contianer-tecnologias'>
-                                        <h2>Tecnologias</h2>
+                                        <h2>Technologies</h2>
                                         <article className='tecnologias-light'>
 
                                             <div className='div'>
@@ -599,7 +602,7 @@ const Header = () => {
                                 <div id='proyectos' className="slider-view">
                                     <section className='contianer-Proyectos'>
                                         <div>
-                                            <h2>Proyectos</h2>
+                                            <h2>Proyects</h2>
                                         </div>
                                         <div>
                                             <article className='article-light'>
@@ -609,7 +612,7 @@ const Header = () => {
                                                     <h2>E-commerce</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>E-coomerce de autos el cual tiene almacenamiento dentro del localStorage, el cual tiene distintos autos en venta.</p>
+                                                    <p>An e-commerce platform for cars with storage implemented within the localStorage, featuring various cars available for sale.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -622,10 +625,10 @@ const Header = () => {
 
                                                 <a href="https://calculadora-three-brown.vercel.app/" target='_blank'><img className='img' src={img2} /></a>
                                                 <div className='posicionh2'>
-                                                    <h2>Calculadora</h2>
+                                                    <h2>Calculator</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Calculadora totalmente funcional, con la que podras hacer cualquier operacion matematica sin problemas.</p>
+                                                    <p>Fully functional calculator that allows you to perform any mathematical operation seamlessly.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -641,7 +644,7 @@ const Header = () => {
                                                     <h2>Poke Api</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Este proyecto tiene como objetivo aprovechar al máximo la Poke API, permitiendo no solo acceder a información detallada sobre los Pokémon y sus estadísticas, sino también brindando funcionalidades adicionales como la capacidad de filtrarlos por especies y mucho más.</p>
+                                                    <p>This project aims to make the most of the Poke API, allowing access to detailed information about Pokémon and their statistics.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -657,7 +660,7 @@ const Header = () => {
                                                     <h2>TMDB Api</h2>
                                                 </div>
                                                 <div className='posicionp'>
-                                                    <p>Este proyecto tiene como objetivo explotar mis conocimientos con un muy buen desafio que seria intentar imitar una plataforma de streaming como lo es Netflix.</p>
+                                                    <p>This project aims to leverage my skills with a significant challenge, attempting to mimic a streaming platform such as Netflix.</p>
                                                 </div>
 
                                                 <div className='divSpan'>
@@ -674,7 +677,7 @@ const Header = () => {
                                 <div id='contacto' className="slider-view">
                                     <section className='contianer-contacto-light'>
                                         <div>
-                                            <h2 className='h2'>Contacto</h2>
+                                            <h2 className='h2'>Contact</h2>
                                         </div>
                                         <article>
                                             <div className="content">
@@ -682,7 +685,7 @@ const Header = () => {
                                                     <div className="contact-form">
                                                         <form>
                                                             <p>
-                                                                <label>Nombre</label>
+                                                                <label>Name</label>
                                                                 <input type="text" name='user_name' id="input1" />
                                                             </p>
 
@@ -692,23 +695,23 @@ const Header = () => {
                                                             </p>
 
                                                             <p>
-                                                                <label>Motivo</label>
+                                                                <label>Reason</label>
                                                                 <input type="text" name="message" id="input3" />
                                                             </p>
 
                                                             <p className='block'>
-                                                                <label>Mensaje</label>
+                                                                <label>Menssage</label>
                                                                 <textarea name="message" id="input4" rows="3"></textarea>
                                                             </p>
                                                             <p className='block'>
                                                                 <button type="submit" value="Send">
-                                                                    Enviar
+                                                                    Send
                                                                 </button>
                                                             </p>
                                                         </form>
                                                     </div>
                                                     <div className="contact-info">
-                                                        <h2>Mas Info</h2>
+                                                        <h2>More Info</h2>
                                                         <ul className='ul'>
                                                             <li>
                                                                 <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>Cordoba Argentina
@@ -721,7 +724,7 @@ const Header = () => {
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            React developer junior sin experiencia laboral, con muchas ganas de aprender y trabajar.
+                                                            Junior React developer with no professional experience, eager to learn and work.
                                                         </p>
 
                                                         <p>
