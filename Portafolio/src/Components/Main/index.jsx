@@ -12,7 +12,10 @@ import { faReact, faJs, faHtml5, faCss3, faGitAlt, faSass, faBootstrap, faGithub
 import { faPeopleGroup, faLightbulb, faCode, faArrowTrendUp, faGear, faSun, faArrowCircleRight, faLocationDot, faPhone, faEnvelope, faMoon, faArrowLeft, faDatabase } from '@fortawesome/free-solid-svg-icons'
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2"
-
+import tailwind from "./../../Assets/tailwind.svg"
+import jest from "./../../Assets/jest.svg"
+import typescript from "./../../Assets/typescript.svg"
+import nextjs from "./../../Assets/nextjs.svg"
 const Header = () => {
     const [selectedOption, setSelectedOption] = useState('About Me');
     const [estado, setEstado] = useState(false)
@@ -285,6 +288,22 @@ const Header = () => {
 
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon' icon={faDatabase} />
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={tailwind} className="icon" ></img>
+                                            </div>
+                                            
+                                            <div className='div'>
+                                                <img src={jest} className="icon" ></img>
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={typescript} className="icon" ></img>
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={nextjs} className="icon" ></img>
                                             </div>
                                         </article>
                                     </section>
@@ -591,6 +610,22 @@ const Header = () => {
 
                                             <div className='div'>
                                                 <FontAwesomeIcon className='icon' icon={faDatabase} />
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={tailwind} className="icon" ></img>
+                                            </div>
+                                            
+                                            <div className='div'>
+                                                <img src={jest} className="icon" ></img>
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={typescript} className="icon" ></img>
+                                            </div>
+
+                                            <div className='div'>
+                                                <img src={nextjs} className="icon" ></img>
                                             </div>
                                         </article>
                                     </section>
